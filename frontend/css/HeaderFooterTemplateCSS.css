@@ -1,4 +1,4 @@
-@charset "UTF-8";
+/*Start of CSS for header*/
 html,body {
 	padding: 0px;
 	margin: 0px;
@@ -84,61 +84,11 @@ body {
 #submit i {
 	padding-right: 5px;
 }
+/*End of CSS for header*/
 
-#main {
-	position: relative;
-	width: 100%;
-}
 
-#login-box { 
-	margin-top: 40px;
-	border: 5px solid #FFCC00;
-	width: 25%;
-	margin-right: auto;
-	margin-left: auto;
-	text-align: center;
-	background-color: #990000;
-}
 
-#login-box img {
-	width: 50%;
-}
-
-#login-button {
-	font-family: varsity;
-	color: #990000;
-	width: 50%;
-	height: 40px;
-	border-radius: 15px;
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-	background-color: #FFCC00;
-	font-size: 30px;
-	border: 0;
-	display: block;
-	margin: auto;
-}
-
-#register-box {
-	border-top: 5px solid #FFCC00;
-	margin-top: 10px;
-	padding-top: 20px;
-}
-
-#register {
-	font-family: varsity;
-	color: #990000;
-	height: 40px;
-	border-radius: 15px;
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-	background-color: #FFCC00;
-	font-size: 20px;
-	border: 0;
-	display: block;
-	margin: auto;
-	width: 75%;
-	margin-bottom: 20px;
-}
-
+/*Start of CSS for header*/
 /*Start of CSS for header*/
 #footer {
 	
@@ -166,3 +116,4 @@ body {
 	padding-top: 4px;
 /*	float: right;	*/
 }
+/*End of CSS for header*/

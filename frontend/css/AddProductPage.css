@@ -1,0 +1,70 @@
+@charset "ISO-8859-1";
+
+/*Start of CSS for header*/
+html,body {
+	padding: 0px;
+	margin: 0px;
+	height: 100%;
+}
+
+@font-face {
+	font-family: varsity;
+	src: url("assets/fonts/VarsityTeam-Bold.otf");
+}
+
+body {
+	height: 100%;
+	position: relative;
+/*	background-color: grey;*/
+}
+
+#header {
+	background-color: #990000;
+	width: 100%;
+	height: 120px;
+	border-bottom: 3px solid #FFCC00;
+	position: relative;
+}
+
+#header img {
+	height: 90%;
+}
+
+#header-divider {
+	border-left: 2px solid #FFCC00;
+	height: 120px;
+	margin-left: 30px;
+	display: inline-block;
+}
+/*End of CSS for header*/
+
+
+
+/*Start of CSS for header*/
+#footer {
+	
+	position:absolute;
+    top: calc(100% - 126px);
+    width: 100%;
+    margin: 0;
+
+	background-color: #990000;
+	height: 120px;
+	border-top: 3px solid #FFCC00;
+	border-bottom: 3px solid #FFCC00;
+
+}
+
+#footer-divider {
+	border-left: 2px solid #FFCC00;
+	float: right;
+	height: 100%;
+	padding-left: 20px;
+}
+
+#footer img {
+	height: 90%;
+	padding-top: 4px;
+/*	float: right;	*/
+}
+/*End of CSS for header*/
