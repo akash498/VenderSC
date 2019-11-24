@@ -1,0 +1,162 @@
+html,body {
+	padding: 0px;
+	margin: 0px;
+}
+
+@font-face {
+	font-family: varsity;
+	src: url("assets/fonts/VarsityTeam-Bold.otf");
+}
+
+body {
+	height: 100%;
+	position: relative;
+/*	background-color: grey;*/
+}
+
+#header {
+	background-color: #990000;
+	width: 100%;
+	height: 120px;
+	border-bottom: 3px solid #FFCC00;
+	position: relative;
+}
+
+#header img {
+	height: 90%;
+}
+
+#header-divider {
+	border-left: 2px solid #FFCC00;
+	height: 120px;
+	margin-left: 30px;
+	display: inline-block;
+}
+
+.search-bar {
+	position: absolute;
+	top: 30%;
+	left: 15%;
+	width: 50%;
+}
+
+#search-id{
+	width: 100%;
+	height: 30px;
+	border: 2px solid #FFCC00;
+	font-family: varsity;
+}
+
+#search-id::placeholder {
+	color: #FFCC00;
+	letter-spacing: 3px;
+	font-size: 13px;
+	padding-left: 5px;
+}
+
+.radio-buttons {
+	position: absolute;
+	top: 65%;
+	left: 15%;
+	font-family: varsity;
+	color: #FFCC00;
+	font-size: 20px;
+}
+
+#submit {
+	position: absolute;
+	top: 30%;
+	left: 68%;
+}
+
+#submit-button {
+	height: 35px;
+	width: 100px;
+	background-color: #990000;
+	font-family: varsity;
+	font-size: 15px;
+	letter-spacing: 1px;
+	color: #FFCC00;
+	border: 2px solid #FFCC00;
+}
+
+#submit i {
+	padding-right: 5px;
+}
+
+#main {
+	position: relative;
+	width: 100%;
+}
+
+#login-box { 
+	margin-top: 40px;
+	border: 5px solid #FFCC00;
+	width: 25%;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+	background-color: #990000;
+}
+
+#login-box img {
+	width: 50%;
+}
+
+#login-button {
+	font-family: varsity;
+	color: #990000;
+	width: 50%;
+	height: 40px;
+	border-radius: 15px;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	background-color: #FFCC00;
+	font-size: 30px;
+	border: 0;
+	display: block;
+	margin: auto;
+}
+
+#register-box {
+	border-top: 5px solid #FFCC00;
+	margin-top: 10px;
+	padding-top: 20px;
+}
+
+#register {
+	font-family: varsity;
+	color: #990000;
+	height: 40px;
+	border-radius: 15px;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	background-color: #FFCC00;
+	font-size: 20px;
+	border: 0;
+	display: block;
+	margin: auto;
+	width: 75%;
+	margin-bottom: 20px;
+}
+
+#footer {
+	background-color: #990000;
+	width: 100%;
+	height: 120px;
+	border-top: 3px solid #FFCC00;
+	border-bottom: 3px solid #FFCC00;
+	margin-top: 25px;
+	position: relative;
+}
+
+#footer-divider {
+	border-left: 2px solid #FFCC00;
+	float: right;
+	height: 100%;
+	padding-left: 20px;
+}
+
+#footer img {
+	height: 90%;
+	padding-top: 4px;
+/*	float: right;	*/
+}
