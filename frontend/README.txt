@@ -2,15 +2,11 @@ Updates On the FrontEnd:
 
 	For Status, put the following: Not Started, Incomplete, or Complete. For Incomplete put what else needs to be done for it to be considered
 	complete.
-
-	HomePage(Guest):
-		Status: Complete.
+	
+	NOTE: Put complete pages at the bottom, and not started pages at the top.
 
 	HomePage(Logged In):
 		Status: Not Started.
-
-	HomePage(Business):
-		Status: Incomplete.
 
 	AddProductPage:
 		Status: Not Started.
@@ -29,5 +25,15 @@ Updates On the FrontEnd:
 
 	ProductPage(Consumer):
 		Status: Not Started.
+
+	HomePage(Business):
+		Status: Incomplete.
+
+	RegisterBusiness:
+		Status: Complete.
+
+	HomePage(Guest):
+		Status: Complete.
+	
 
 	
