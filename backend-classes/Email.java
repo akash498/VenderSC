@@ -10,7 +10,8 @@ public class Email {
     public static void main(String[] args) {
 
         final String username = "vendorsc2019@gmail.com";
-        final String password = "csci2012019";
+        // insert password here
+        final String password = "";
 
         Properties prop = new Properties();
 		prop.put("mail.smtp.host", "smtp.gmail.com");
@@ -32,7 +33,8 @@ public class Email {
             message.setFrom(new InternetAddress("vendorsc2019@gmail.com"));
             message.setRecipients(
                     Message.RecipientType.TO,
-                    InternetAddress.parse("samskates.chase@gmail.com")
+                    // enter recipiant email here
+                    InternetAddress.parse("")
             );
             message.setSubject("Testing Gmail TLS");
             message.setText("Dear Mail Crawler,"
