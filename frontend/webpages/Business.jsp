@@ -10,78 +10,45 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 </head>
 <body>
-<nav class="navbar navbar-expand-md  navbar-dark" style = "background-color:#990000;">
-  
-  
-  <img src="vendorSClogo.png" alt="logo" id = "logo">
-  
-  <ul class="navbar-nav">
-    <li class="nav-item">
-     	<form class="form-inline">
-    		<table>
-    		<tr>
-    		<td>
-    		<input class="form-control mr-sm-2" type="search" placeholder="Search for Product or Business" aria-label="Search" style = "width:600px;border: 2px solid;
-			border-color: #FFCC00;">
-    		<button id = "searchButton"class="btn btn-outline-danger my-2 my-sm-0" type="submit">Search</button>
-    		
-    		</td>
-    		
-    		</tr>
-    		<tr>
-    		<td>
-    		<input type="radio" id="product" checked style="color: #FFCC00;">Product
-    		   
-    
-    		<input type="radio" id = "business" style="color: #FFCC00;">Business
-    		   
-    		
-    		</td>
-    		
-    		</tr>
-    		
-    		
-    		
-    		</table>
-  
-    		
-  		</form>
-  	</li>
-  </ul>	
-   <ul class="navbar-nav">
-  		<table>
-  		<tr>
-  		<td></td><td></td>
-  		
-  		
-  		<td>
-  		
-  		<a class="btn btn-outline-danger my-2 my-sm-0" href="#" style="margin-left: 17px;	border: 2px solid;
-		color: #FFCC00;">Profile</a>
-  		</td>
-  		
-  		
-  		
-  		</tr>
-  		
-  		<tr>
-  		<td></td><td></td>
-  		<td>
-  		<a class="btn btn-outline-danger my-2 my-sm-0" href="#" style="margin-left: 17px;	border: 2px solid;
-		color: #FFCC00;">Log Out</a>
-  		
-  		</td>
-  		
-  		
-  		
-  		</tr>
-  		
-  		
-  		</table>
-  
-  	
-  </ul>
-</nav>
+
+  <!-- Start Template of Header Div -->
+	<div id="header">
+	
+			<img id="headerLogo" src="vendorSClogo.png" alt="vendorSC logo">
+			<div id="header-divider"></div> 
+			<div id="search-form">
+			
+				<form action="" method="GET" id="search-form">
+				
+					<div id="searchBar">
+						<input type="text" name="" class="form-control" id="search-id" placeholder="SEARCH FOR PRODUCT OR BUSINESS">
+						<button type="submit" id="submit-button"><i class="fa fa-search"></i>Search</button><br>
+						<label class="radButton"><input type="radio" name="filter" value="business"> Business</label>
+						<label class="radButton"><input type="radio" name="filter" value="product"> Product</label>
+					</div>
+				
+				</form> 
+			
+			</div>
+			
+			
+			<form action="" method="GET" id="search-form">
+				
+				
+				<div id="logout">	
+					
+					<img id="signoutLogo" src="vendorSClogo.png" alt="vendorSC logo">
+					<button type="submit" id="logoutButton">Logout</button><br>
+						
+				</div>
+				
+			</form> 
+			
+			
+	</div>
+	
+
+<!-- End Template of Header Div -->
 
 <div class="container-fluid">
   
