@@ -10,9 +10,6 @@ Updates On the FrontEnd:
 	HomePage(Logged In):
 		Status: Not Started.
 
-	AddProductPage:
-		Status: Not Started.
-
 	EditProductPage:
 		Status: Not Started.
 
@@ -22,20 +19,26 @@ Updates On the FrontEnd:
 	SearchResults(Guest):
 		Status: Not Started.
 
-	BusinessPage:
-		Status: Not Started.
-
 	ProductPage(Consumer):
 		Status: Not Started.
 
 	HomePage(Business):
-		Status: Incomplete.
+		Status: Incomplete. - I think someone started this one but not certain... Please update if you know more about this page.
+
+	AddProductPage:
+		Status: Incomplete. - The fonts need to be updated. Also the image uploader still needs to be done.
+
+	HomePage(Guest):
+		Status: Incomplete. - needs to be redone without using absolute. Need to update header and footer code. You should really
+		do this page from scratch, but it is listed as incomplete because there is a version of it.
+
+	BusinessPage:
+		Status: Complete.
 
 	RegisterBusiness:
 		Status: Complete.
 
-	HomePage(Guest):
-		Status: Complete.
+
 	
 
 	
