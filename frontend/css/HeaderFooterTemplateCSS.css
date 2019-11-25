@@ -2,6 +2,7 @@
 html,body {
 	padding: 0px;
 	margin: 0px;
+	height: 100%;
 }
 
 @font-face {
@@ -89,19 +90,14 @@ body {
 
 
 /*Start of CSS for header*/
-/*Start of CSS for header*/
 #footer {
-	
-	position:absolute;
-    top: calc(100% - 126px);
-    width: 100%;
-    margin: 0;
-
 	background-color: #990000;
+	width: 100%;
 	height: 120px;
 	border-top: 3px solid #FFCC00;
 	border-bottom: 3px solid #FFCC00;
-
+	margin-top: 25px;
+	position: relative;
 }
 
 #footer-divider {
