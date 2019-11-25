@@ -21,6 +21,7 @@
 				</div>
 			</form> 
 		</div>
+	</div>
 <!-- End Template of Header Div -->
 
 <!-- Start Template of Footer Div -->
