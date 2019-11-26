@@ -1,7 +1,8 @@
 Link for the font: https://www.dafont.com/varsity-team.font
 
-Updates On the FrontEnd:
+IMPORTANT NOTE: If yoy are doing a page that does NOT have a scrolling element, use the footer from AddProductPage, else use the footer from template file. 
 
+Updates On the FrontEnd:
 	For Status, put the following: Not Started, Incomplete, or Complete. For Incomplete put what else needs to be done for it to be considered
 	complete.
 	
