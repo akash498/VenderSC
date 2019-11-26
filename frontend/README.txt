@@ -1,6 +1,9 @@
 Link for the font: https://www.dafont.com/varsity-team.font
 
-IMPORTANT NOTE: If yoy are doing a page that does NOT have a scrolling element, use the footer from AddProductPage, else use the footer from template file. 
+IMPORTANT NOTE: If you are doing a page that does NOT have a scrolling element, use the footer from AddProductPage, else use the footer from template file. 
+
+DEBUGGING: If you are getting errors that your pictures or font are not loading, check the html. In eclipse, I use "../css/filename.css", try
+taking the "../" out of the url.
 
 Updates On the FrontEnd:
 	For Status, put the following: Not Started, Incomplete, or Complete. For Incomplete put what else needs to be done for it to be considered
