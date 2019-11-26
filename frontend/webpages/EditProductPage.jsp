@@ -6,7 +6,7 @@
 
 	<meta charset="ISO-8859-1">
 	<title>VendorSC</title>
-	<link rel="stylesheet" type="text/css" href="../css/AddProductPage.css">
+	<link rel="stylesheet" type="text/css" href="../css/EditProductPage.css">
 	<!-- 	Icon Library	 -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -39,7 +39,7 @@
 	
 		<div id="headDiv">
 		
-			<h1 id="addProd">NEW PRODUCT FORM</h1>
+			<h1 id="addProd">EDIT PRODUCT INFO</h1>
 			
 			<form action="" method="GET" id="search-form">
 				
