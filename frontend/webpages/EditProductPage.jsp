@@ -51,6 +51,15 @@
 					<br>
 					<div id="imageUpload">
 						<h1 id="imageLabel">ADD IMAGE:</h1>
+						<!-- <input id="fileChooser" type="file" name="pic" accept="image/*"> -->
+			
+						<br>
+						<div class="upload-btn-wrapper">
+							<button class="btn-upload">Upload a file</button>
+							<input type="file" name="myfile" accept="image/*">
+						</div>
+						
+						
 					</div>
 					<div id="rateDiv">
 						<h1 id="rateLabel">DISPLAY RATING:</h1>

@@ -1,18 +1,18 @@
 Link for the font: https://www.dafont.com/varsity-team.font
 
-IMPORTANT NOTE: If you are doing a page that does NOT have a scrolling element, use the footer from AddProductPage, else use the footer from template file. 
+IMPORTANT NOTE: If you are doing a page that does NOT have a scrolling element, use the footer from AddProductPage, else use the footer from template file.
 
 DEBUGGING: If you are getting errors that your pictures or font are not loading, check the html. In eclipse, I use "../css/filename.css", try
 taking the "../" out of the url.
 
 Updates On the FrontEnd:
-Following status options accepted: Not Started, Incomplete (w/ notes about what needs to be done), or Complete. 	
+Following status options accepted: Not Started, Incomplete (w/ notes about what needs to be done), or Complete.
 NOTE: Put complete pages at the bottom, and not started pages at the top.
 
 	HomePage(Logged In):
 		Status: Not Started.
 
-	SearchResults(Logged In): 
+	SearchResults(Logged In):
 		Status: Not Started.
 
 	SearchResults(Guest):
@@ -29,13 +29,13 @@ NOTE: Put complete pages at the bottom, and not started pages at the top.
 
 
 	EditProductPage:
-		Status: Incomplete. - The image uploader still needs to be done.
-	
+		Status: Complete - If there is time left over. Will add js that changes button title according to image uploaded... 
+
 	BusinessPage:
 		Status: Complete.
 
 	RegisterBusiness:
 		Status: Complete.
-	
+
 	HomePage(Guest):
 		Status: Comlete.
