@@ -1,0 +1,12 @@
+
+
+//font we are using 
+@font-face {
+	font-family: varsity;
+	src: url("assets/fonts/VarsityTeam-Bold.otf");
+}
+
+
+
+//Link for the font: 
+https://www.dafont.com/varsity-team.font
