@@ -18,7 +18,7 @@ NOTE: Put complete pages at the bottom, and not started pages at the top.
 		Status: Incomplete. - Kabeer is working on this. Updates to come.
 
 	HomePage(Business):
-		Status: Incomplete. - I think someone started this one but not certain... Please update if you know more about this page.
+		Status: Complete. 
 
 	AddProductPage:
 		Status: Incomplete. - Wilman is working on finishing image uploader.
@@ -42,4 +42,4 @@ NOTE: Put complete pages at the bottom, and not started pages at the top.
 		Status: Complete.
 
 	HomePage(Guest):
-		Status: Comlete.
+		Status: Complete.
