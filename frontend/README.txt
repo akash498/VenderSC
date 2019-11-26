@@ -11,9 +11,6 @@ Updates On the FrontEnd:
 	
 	NOTE: Put complete pages at the bottom, and not started pages at the top.
 
-	HomePage(Logged In):
-		Status: Not Started.
-
 	SearchResults(Logged In): 
 		Status: Not Started.
 
@@ -23,12 +20,14 @@ Updates On the FrontEnd:
 	ProductPage(Consumer):
 		Status: Not Started.
 
+	HomePage(Logged In):
+		Status: Incomplete. - Kabeer is working on this. Updates to come.
+
 	HomePage(Business):
 		Status: Incomplete. - I think someone started this one but not certain... Please update if you know more about this page.
 
 	AddProductPage:
 		Status: Incomplete. - The image uploader still needs to be done.
-
 
 	EditProductPage:
 		Status: Incomplete. - The image uploader still needs to be done.
