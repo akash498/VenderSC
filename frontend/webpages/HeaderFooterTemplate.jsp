@@ -1,3 +1,15 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<head>
+		<meta charset="UTF-8">
+		<title>VendorSC</title>
+		<link rel="stylesheet" type="text/css" href="../css/HeaderFooterTemplateCSS.css">
+		<!-- 	Icon Library	 -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
 <!-- Start Template of Header Div -->
 	<div id="header">
 	
@@ -38,7 +50,9 @@
 <!-- Start Template of Footer Div -->
 		<div id="footer">
 			<div id="footer-divider">
-				<img src="images/vendorSClogowithbackground.png" alt="footerLogo">
+				<img src="../images/vendorSClogowithbackground.png" alt="footerLogo">
 			</div>
 		</div>
 <!-- End Template of Header Div -->
+</body>
+</html>

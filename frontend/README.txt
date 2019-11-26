@@ -1,5 +1,3 @@
-Link for the font: https://www.dafont.com/varsity-team.font
-
 IMPORTANT NOTE: If you are doing a page that does NOT have a scrolling element, use the footer from AddProductPage, else use the footer from template file.
 
 DEBUGGING: If you are getting errors that your pictures or font are not loading, check the html. In eclipse, I use "../css/filename.css", try
@@ -9,33 +7,39 @@ Updates On the FrontEnd:
 Following status options accepted: Not Started, Incomplete (w/ notes about what needs to be done), or Complete.
 NOTE: Put complete pages at the bottom, and not started pages at the top.
 
-	HomePage(Logged In):
-		Status: Not Started.
 
-	SearchResults(Logged In):
-		Status: Not Started.
-
-	SearchResults(Guest):
-		Status: Not Started.
+	SearchResults(Guest/User):
+		Status: Incomplete. - Akash is working on this. Updates to come.
 
 	ProductPage(Consumer):
-		Status: Not Started.
+		Status: Incomplete. - Tynan is working on this. Updates to come.
+
+	HomePage(User):
+		Status: Incomplete. - Kabeer is working on this. Updates to come.
 
 	HomePage(Business):
-		Status: Incomplete. - I think someone started this one but not certain... Please update if you know more about this page.
+		Status: Complete.
 
 	AddProductPage:
-		Status: Incomplete. - The image uploader still needs to be done.
-
+		Status: Incomplete. - Wilman is working on finishing image uploader.
 
 	EditProductPage:
-		Status: Complete - If there is time left over. Will add js that changes button title according to image uploaded... 
+		Status: Complete
 
 	BusinessPage:
+		Status: Complete.
+
+	BusinessHomePage:
 		Status: Complete.
 
 	RegisterBusiness:
 		Status: Complete.
 
+	RegisterUser:
+		Status: Complete.
+
+	LoginPage:
+		Status: Complete.
+
 	HomePage(Guest):
-		Status: Comlete.
+		Status: Complete.
