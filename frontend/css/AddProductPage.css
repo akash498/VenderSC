@@ -182,6 +182,39 @@
 	
 }
 
+/* Start of CSS for file browser */
+.upload-btn-wrapper {
+	position: relative;
+	overflow: hidden; 
+	display: inline-block; 
+	margin: 0 auto;
+	height: 50px;
+	width: 90%;
+}
+
+.btn-upload {
+	font-family: varsity;
+	height: 50px;
+  	color: #929292;
+  	background-color: #C4C4C4;
+  	padding-left: 20px;
+/* 	padding: 8px 20px; */
+ 	font-size: 20px;
+	height: 50px;
+	font-weight: bold;
+	text-align: left;
+	width: 100%; 
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+/* End of CSS for file browser */
+
 #rateDiv {
 	
 	margin-top: 10px;
@@ -266,7 +299,7 @@
 	border-left: 4px solid #FFCC00;
 	float: right;
 	height: 100%;
-	padding-left: 34px;
+	padding-left: 55px;
 }
 
 #footer img {

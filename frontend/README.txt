@@ -21,7 +21,7 @@ NOTE: Put complete pages at the bottom, and not started pages at the top.
 		Status: Complete.
 
 	AddProductPage:
-		Status: Incomplete. - Wilman is working on finishing image uploader.
+		Status: Complete.
 
 	EditProductPage:
 		Status: Complete
