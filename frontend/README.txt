@@ -9,7 +9,7 @@ NOTE: Put complete pages at the bottom, and not started pages at the top.
 
 
 	SearchResults(Guest/User):
-		Status: Incomplete. - Akash is working on this. Updates to come.
+		Status: Complete.
 
 	ProductPage(Consumer):
 		Status: Incomplete. - Tynan is working on this. Updates to come.
