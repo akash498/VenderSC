@@ -23,10 +23,6 @@ Updates On the FrontEnd:
 	HomePage(Business):
 		Status: Incomplete. - I think someone started this one but not certain... Please update if you know more about this page.
 
-	HomePage(Guest):
-		Status: Incomplete. - needs to be redone without using absolute. Need to update header and footer code. You should really
-		do this page from scratch, but it is listed as incomplete because there is a version of it.
-
 	AddProductPage:
 		Status: Incomplete. - The image uploader still needs to be done.
 
@@ -39,8 +35,6 @@ Updates On the FrontEnd:
 
 	RegisterBusiness:
 		Status: Complete.
-
-
 	
-
-	
+	HomePage(Guest):
+		Status: Comlete.
