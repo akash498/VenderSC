@@ -1,5 +1,3 @@
-Link for the font: https://www.dafont.com/varsity-team.font
-
 IMPORTANT NOTE: If you are doing a page that does NOT have a scrolling element, use the footer from AddProductPage, else use the footer from template file. 
 
 DEBUGGING: If you are getting errors that your pictures or font are not loading, check the html. In eclipse, I use "../css/filename.css", try
@@ -13,10 +11,10 @@ NOTE: Put complete pages at the bottom, and not started pages at the top.
 		Status: Not Started.
 
 	SearchResults(Guest):
-		Status: Not Started.
+		Status: Incomplete. - Akash is working on this. Updates to come.
 
 	ProductPage(Consumer):
-		Status: Not Started.
+		Status: Incomplete. - Tynan is working on this. Updates to come.
 
 	HomePage(Logged In):
 		Status: Incomplete. - Kabeer is working on this. Updates to come.
@@ -25,12 +23,15 @@ NOTE: Put complete pages at the bottom, and not started pages at the top.
 		Status: Incomplete. - I think someone started this one but not certain... Please update if you know more about this page.
 
 	AddProductPage:
-		Status: Incomplete. - The image uploader still needs to be done.
+		Status: Incomplete. - Wilman is working on finishing image uploader.
 
 	EditProductPage:
-		Status: Incomplete. - The image uploader still needs to be done.
+		Status: Incomplete. - Wilman is working on finishing image uploader.
 	
 	BusinessPage:
+		Status: Complete.
+
+	BusinessHomePage:
 		Status: Complete.
 
 	RegisterBusiness:
