@@ -7,16 +7,14 @@ Updates On the FrontEnd:
 Following status options accepted: Not Started, Incomplete (w/ notes about what needs to be done), or Complete. 	
 NOTE: Put complete pages at the bottom, and not started pages at the top.
 
-	SearchResults(Logged In): 
-		Status: Not Started.
-
-	SearchResults(Guest):
+	
+	SearchResults(Guest/User):
 		Status: Incomplete. - Akash is working on this. Updates to come.
 
 	ProductPage(Consumer):
 		Status: Incomplete. - Tynan is working on this. Updates to come.
 
-	HomePage(Logged In):
+	HomePage(User):
 		Status: Incomplete. - Kabeer is working on this. Updates to come.
 
 	HomePage(Business):
@@ -37,5 +35,11 @@ NOTE: Put complete pages at the bottom, and not started pages at the top.
 	RegisterBusiness:
 		Status: Complete.
 	
+	RegisterUser:
+		Status: Complete.
+
+	LoginPage:
+		Status: Complete.
+
 	HomePage(Guest):
 		Status: Comlete.
