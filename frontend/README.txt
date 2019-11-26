@@ -6,10 +6,8 @@ DEBUGGING: If you are getting errors that your pictures or font are not loading,
 taking the "../" out of the url.
 
 Updates On the FrontEnd:
-	For Status, put the following: Not Started, Incomplete, or Complete. For Incomplete put what else needs to be done for it to be considered
-	complete.
-	
-	NOTE: Put complete pages at the bottom, and not started pages at the top.
+Following status options accepted: Not Started, Incomplete (w/ notes about what needs to be done), or Complete. 	
+NOTE: Put complete pages at the bottom, and not started pages at the top.
 
 	HomePage(Logged In):
 		Status: Not Started.
