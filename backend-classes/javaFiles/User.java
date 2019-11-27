@@ -15,50 +15,50 @@ public class User {
 	private String Email;
 	private String Name;
 	private ArrayList<Integer> ProductsPurchased;
-	
+
 	//UserID getters and setters
-	int public getUserID() {
+	public int getUserID() {
 		return UserID;
 	}
-	void public setUserID(int ID) {
+	public void setUserID(int ID) {
 		UserID = ID;
 	}
 	//Username getters and setters
-	String public getUsername() {
+	public String getUsername() {
 		return Username;
 	}
-	void public setUsername(String username) {
+	public void setUsername(String username) {
 		Username = username;
 	}
 	//Password getters and setters
-	String public getPassword() {
+	 public String getPassword() {
 		return Password;
 	}
-	void public setPassword(String pass) {
+	 public void setPassword(String pass) {
 		Password = pass;
 	}
 	//Email getters and setters
-	String public getEmail() {
+	public String getEmail() {
 		return Email;
 	}
-	void public setEmail(String e) {
+	public void setEmail(String e) {
 		Email = e;
 	}
 	//Name getters and setters
-	String public getName() {
+	public String getName() {
 		return Name;
 	}
-	void public setName(String n) {
+	public void setName(String n) {
 		Name = n;
 	}
-	//getter and setter(adding to arraylist) for ProductsPurchased 
-	ArrayList<Integer> public getProductsPurchased {
+	//getter and setter(adding to arraylist) for ProductsPurchased
+	public ArrayList<Integer> getProductsPurchased(){
 		return ProductsPurchased;
 	}
-	void public addProduct(int p) {
+	public void addProduct(int p) {
 		ProductsPurchased.add(p);
 	}
-	
+
 	//constructor
 	User(int ID) {
 		UserID = ID;
@@ -85,20 +85,23 @@ public class User {
 			Password = rs.getString("password");
 			Email = rs.getString("email");
 			Name = rs.getString("name");
-			
+
 			//I am done with the connection and prepared statement. I have gathered all the data I want from the DB
 			conn.close();
 			ps.close();
 		}
 		catch (SQLException e) {
 			System.out.println("ERROR");
-		}	
+		}
+		catch (ClassNotFoundException e) {
+			System.out.println("ERROR");
+		}
 	}
-	
+
 	//hasPurchased member function that checks if a product has been purchased by this user
-	boolean public hasPurchased(Product p) {
+	public boolean hasPurchased(Product p) {
 		int productID = p.getProductId();
-		if (this.ProductsPurchased.contains(productID) {
+		if (this.ProductsPurchased.contains(productID)) {
 			return true;
 		}
 		return false;
