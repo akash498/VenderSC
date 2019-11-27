@@ -12,10 +12,10 @@ NOTE: Put complete pages at the bottom, and not started pages at the top.
 		Status: Complete.
 
 	ProductPage(Consumer):
-		Status: Incomplete. - Tynan is working on this. Updates to come.
+		Status: Complete.
 
 	HomePage(User):
-		Status: Incomplete. - Kabeer is working on this. Updates to come.
+		Status: Complete.
 
 	HomePage(Business):
 		Status: Complete.
