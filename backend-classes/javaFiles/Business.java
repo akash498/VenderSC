@@ -29,9 +29,6 @@ public class Business {
 		setProducts();
 	}
 	// getters and setters
-	public void addProduct(Product p) {
-		System.out.println("adding prudcut");
-	}
 	public int getBusinessId() {
 		return businessId;
 	}
