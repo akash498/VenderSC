@@ -6,7 +6,7 @@
 
 	<meta charset="ISO-8859-1">
 	<title>VendorSC</title>
-	<link rel="stylesheet" type="text/css" href="BusinessHomePage.css">
+	<link rel="stylesheet" type="text/css" href="css/BusinessHomePage.css">
 	<!-- 	Icon Library	 -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -17,7 +17,7 @@
 <!-- Start of Header Div -->
 	<div id="header">
 	
-			<img id="headerLogo" src="vendorSClogowithbackground.png" alt="vendorSC logo">
+			<img id="headerLogo" src="images/vendorSClogowithbackground.png" alt="vendorSC logo">
 			<div id="header-divider"></div> 
 				
 			<div id="searchBar">
@@ -28,7 +28,7 @@
 				
 			<div id="logout">
 			
-				<img id="signoutLogo" src="../images/ProfileIIcon.png" alt="vendorSC logo">
+				<img id="signoutLogo" src="images/ProfileIIcon.png" alt="vendorSC logo">
 				<form action = "GuestHomePage.jsp">
 				<button type="submit" id="logoutButton">Logout</button><br>
 				</form>
@@ -60,7 +60,7 @@
 <!-- EXAMPLE PRODUCTS START -->
 				<div class="productBody">
 				
-					<img class="prodLogo" src="../images/vendorSClogowithbackground.png" alt="vendorSC logo">
+					<img class="prodLogo" src="images/vendorSClogowithbackground.png" alt="vendorSC logo">
 					<div class="prodInfo">
 					
 						<h1 class="prodName">PRODUCT NAME: NAME</h1>
@@ -79,7 +79,7 @@
 				
 				<div class="productBody">
 				
-					<img class="prodLogo" src="../images/vendorSClogowithbackground.png" alt="vendorSC logo">
+					<img class="prodLogo" src="images/vendorSClogowithbackground.png" alt="vendorSC logo">
 					<div class="prodInfo">
 					
 						<h1 class="prodName">PRODUCT NAME: NAME</h1>
@@ -98,7 +98,7 @@
 				
 				<div class="productBody">
 				
-					<img class="prodLogo" src="../images/vendorSClogowithbackground.png" alt="vendorSC logo">
+					<img class="prodLogo" src="images/vendorSClogowithbackground.png" alt="vendorSC logo">
 					<div class="prodInfo">
 					
 						<h1 class="prodName">PRODUCT NAME: NAME</h1>
@@ -135,18 +135,28 @@
 			
 			</div>
 			
-			<div class="bodyDiv">
+			<div class="bodyDivB">
 			
 				<h1 id="bioHead">BUSINESS DESCRIPTION:</h1><br>
-				<p id="bio"> </p>
+				
+				<form action="" method="GET" id="edit-bio">
+			
+			
+					<textarea name="bioText" id="bio">CHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE TCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE TCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE T
+					</textarea><br>
+					<button type="submit" name="editBio" value="editBio" id="edit-bio-button">EDIT</button>
+				
+				
+				</form>	
+				
 			
 			</div>
 					
-			<form action="" method="GET" id="edit-bio">
-				<button type="submit" id="edit-bio-button">EDIT</button>
-			</form>	
-			<form action="" method="GET" id="email-notifs">
-				<button type="submit" id="email-button">EMAIL NOTIFICATIONS</button>
+			
+			
+			
+			<form action="BusinessHomePageServlet" method="GET" id="email-notifs">
+				<button type="submit" name="email" value="email" id="email-button">EMAIL NOTIFICATIONS</button>
 			</form>		
 				
 			
@@ -163,7 +173,7 @@
 	<div id="footer">
 		<div id="footer-divider-left"></div>
 		<div id="footer-divider-right">
-			<img src="../images/vendorSClogowithbackground.png" alt="footerLogo">
+			<img src="images/vendorSClogowithbackground.png" alt="footerLogo">
 		</div>
 	</div>
 <!-- End of Footer Div -->

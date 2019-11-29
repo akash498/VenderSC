@@ -12,7 +12,7 @@ import javax.mail.internet.MimeMessage;
 
 /* INFORMATION ON HOW TO GET THIS THREAD WORKING
  * 
- * 1. Add the JARs mailapi.jar and smtp.jar to your java build path.
+ * 1. Add the JARs mailapi.jar and smtp.jar to your java build path AND deployment assembly.
  * 
  * 2. Enter the password for vendorsc2019@gmail.com on line 51
  * 
@@ -47,7 +47,7 @@ public class Email_Thread extends Thread {
 		final String username = "vendorsc2019@gmail.com";
 		
         // insert password here
-        final String password = "";
+        final String password = "csci2012019";
 
         Properties prop = new Properties();
 		prop.put("mail.smtp.host", "smtp.gmail.com");
