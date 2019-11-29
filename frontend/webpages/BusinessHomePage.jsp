@@ -6,7 +6,7 @@
 
 	<meta charset="ISO-8859-1">
 	<title>VendorSC</title>
-	<link rel="stylesheet" type="text/css" href="../css/BusinessHomePage.css">
+	<link rel="stylesheet" type="text/css" href="BusinessHomePage.css">
 	<!-- 	Icon Library	 -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -17,7 +17,7 @@
 <!-- Start of Header Div -->
 	<div id="header">
 	
-			<img id="headerLogo" src="../images/vendorSClogowithbackground.png" alt="vendorSC logo">
+			<img id="headerLogo" src="vendorSClogowithbackground.png" alt="vendorSC logo">
 			<div id="header-divider"></div> 
 				
 			<div id="searchBar">
@@ -29,7 +29,9 @@
 			<div id="logout">
 			
 				<img id="signoutLogo" src="../images/ProfileIIcon.png" alt="vendorSC logo">
+				<form action = "GuestHomePage.jsp">
 				<button type="submit" id="logoutButton">Logout</button><br>
+				</form>
 			
 			</div>
 				

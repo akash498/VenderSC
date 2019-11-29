@@ -6,7 +6,7 @@
 
 	<meta charset="ISO-8859-1">
 	<title>VendorSC</title>
-	<link rel="stylesheet" type="text/css" href="../css/UserHomePage.css">
+	<link rel="stylesheet" type="text/css" href="UserHomePage.css">
 	<!-- 	Icon Library	 -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -21,7 +21,6 @@
 			<div id="header-divider"></div> 
 			<div id="search-form">
 			
-				<form action="" method="GET" id="search-form">
 				
 					<div id="searchBar">
 						<input type="text" name="" class="form-control" id="search-id" placeholder="SEARCH FOR PRODUCT OR BUSINESS">
@@ -30,21 +29,19 @@
 						<label class="radButton"><input type="radio" name="filter" value="product"> Product</label>
 					</div>
 				
-				</form> 
 			
 			</div>
 			
 			
-			<form action="" method="GET" id="search-form">
 				
 				<div id="logout">	
 					
 					<img id="signoutLogo" src="../images/ProfileIIcon.png" alt="vendorSC logo">
-					<button type="submit" id="logoutButton">Logout</button><br>
-						
+					<form action = "GuestHomePage.jsp">
+						<button type="submit" id="logoutButton">Logout</button><br>
+					</form>	
 				</div>
 				
-			</form>
 	</div>
 <!-- End of Header Div -->
 

@@ -43,11 +43,16 @@
 		<div id="main">
 			<div id="login-box">
 				<img src="images/vendorSClogowithbackground.png" alt="LoginRegisterLogo.png">
-				<button id="login-button">LOGIN</button>
-				
+				<form action="Login.jsp">
+					<button id="login-button">LOGIN</button>
+				</form>
 				<div id="register-box">
-					<button id="register">REGISTER AS USER</button>
-					<button id="register">REGISTER AS BUSINESS</button>
+					<form action="RegisterUser.jsp">
+						<button id="register" >REGISTER AS USER</button>
+					</form>
+					<form action="RegisterBusiness.jsp">
+						<button id="register">REGISTER AS BUSINESS</button>
+					</form>
 				</div>
 			</div>
 			
