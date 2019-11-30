@@ -48,7 +48,7 @@ BusinessHomePageServlet.java: Status - Incomplete
 
 	Remove Product: Status - Incomplete
 
-		This button needs to be modified so it interacts with the business that is currently logged in. More details are in the servlet.
+		This button needs to remove the product from the business that is logged in.
 
 	Add Product: Status - Incomplete
 
