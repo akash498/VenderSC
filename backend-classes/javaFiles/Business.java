@@ -13,6 +13,7 @@ public class Business {
 	private String description;
 	private String imagePath;
 	private ArrayList<Product> products;
+	private Boolean emailOn;
 	// constructor - takes in business id and fills in other members from database
 	public Business(String username) {
 		//businessId = id;
@@ -33,6 +34,8 @@ public class Business {
 				System.out.println(description);
 				businessId = rs.getInt("businessID");
 				imagePath = rs.getString("imageLocation");
+				// TODO - create new emailOn column in database
+				emailOn = true;
 			}
 		} catch (SQLException e) {
 			System.out.println(e);
@@ -105,6 +108,12 @@ public class Business {
 			System.out.println("erorrr");
 		}
 		setProducts();
+	}
+	public Boolean getEmailOn() {
+		return emailOn;
+	}
+	public void setEmailOn() {
+		this.emailOn = !this.emailOn;
 	}
 	
 }
