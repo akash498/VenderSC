@@ -6,6 +6,18 @@ Business.java: Status - Unknown
 
 	I added a boolean for email logic.
 
+EditProductPageServlet.java: Status - Incomplete
+
+	Business class needs to be implemented so the data is stored in the business.
+
+	We need to have the image that was uploaded saved in a folder located in WebContent called "images".
+
+EditProductPage.jsp: Status - Incomplete
+	
+	Business Product information needs to load as place holders
+	
+	All buttons and input fields behave as expected.
+
 AddProductPageServlet.java: Status - Incomplete
 
 	Business class needs to be implemented so the data is stored in the business.
