@@ -70,13 +70,15 @@
 			
 			
 			for (int i = 0; i < products.size(); i++ ) {%>
+				
+				
 				<div class="productBody">
 				
-					<img class="prodLogo" src="<%=products.get(i).getName()%>" alt="vendorSC logo">
+					<img class="prodLogo" src="" alt="vendorSC logo">
 					<div class="prodInfo">
 					
-						<h1 class="prodName"><%products.get(i).getName(); %></h1>
-						<h1 class="prodCat">PRODUCT CATEGORY: <%products.get(i).getName(); %></h1>
+						<h1 class="prodName"><%=products.get(i).getName() %></h1>
+						<h1 class="prodCat">PRODUCT CATEGORY:<%=products.get(i).getName() %></h1>
 						<form action="BusinessHomePageServlet" method="GET">
 							<button type="submit" name="editProduct" value="<%=i%>" class="edit-prod-button">EDIT</button>
 						</form>	
