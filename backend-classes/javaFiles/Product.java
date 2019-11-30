@@ -15,15 +15,17 @@ public class Product {
 	private double rating;
 	private int productId;
 	private int ratable;
+	private String imagePath;
 	private ArrayList<Review> reviews;
 	// constructor
-	Product(String name_, String shortDescription_, String description_, int businessId_, int productId_, int ratable) {
+	Product(String name_, String shortDescription_, String description_, int businessId_, int productId_, int ratable_, String imagePath_) {
 		setName(name_);
 		setShortDescription(shortDescription_);
 		setDescription(description_);
 		setBusinessId(businessId_);
 		setProductId(productId_);
-		setRatable(ratable);
+		setRatable(ratable_);
+		setImagePath(imagePath_);
 		// set the reviews and rating using the rating table in database
 		setReviews();
 	}
@@ -42,6 +44,7 @@ public class Product {
 			shortDescription = rs.getString("shortDescription");
 			ratable = rs.getInt("ratable");
 			businessId = rs.getInt("businessID");
+			imagePath = rs.getString("imageLocation");
 		} catch (SQLException e) {
 			System.out.println("erorrr");
 		}
@@ -133,6 +136,12 @@ public class Product {
 	}
 	public void setRatable(int ratable) {
 		this.ratable = ratable;
+	}
+	public String getImagePath() {
+		return imagePath;
+	}
+	public void setImagePath(String imagePath) {
+		this.imagePath = imagePath;
 	}
 	
 }
