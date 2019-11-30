@@ -6,6 +6,16 @@ Business.java: Status - Unknown
 
 	I added a boolean for email logic.
 
+AddProductPageServlet.java: Status - Incomplete
+
+	Business class needs to be implemented so the data is stored in the business.
+
+	We need to have the image that was uploaded saved in a folder located in WebContent called "images".
+
+AddProductPage.jsp: Status - Complete
+
+	All buttons and input fields behave as expected.
+
 BusinessHomePageServlet.java: Status - Incomplete
 
 	This is the servlet that all buttons in BusinessHomePage.jsp should redirect to. Depending on the URL parameters, the servlet should
