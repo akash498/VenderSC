@@ -29,8 +29,8 @@
 			<div id="logout">
 			
 				<img id="signoutLogo" src="images/ProfileIIcon.png" alt="vendorSC logo">
-				<form action = "GuestHomePage.jsp">
-				<button type="submit" id="logoutButton">Logout</button><br>
+				<form action="BusinessHomePageServlet" method="GET">
+				<button type="submit" name="logout" value="logout" id="logoutButton">Logout</button><br>
 				</form>
 			
 			</div>
@@ -65,11 +65,11 @@
 					
 						<h1 class="prodName">PRODUCT NAME: NAME</h1>
 						<h1 class="prodCat">PRODUCT CATEGORY: CATEGORY</h1>
-						<form action="" method="GET">
-							<button type="submit" class="edit-prod-button">EDIT</button>
+						<form action="BusinessHomePageServlet" method="GET">
+							<button type="submit" name="editProduct" value="0" class="edit-prod-button">EDIT</button>
 						</form>	
-						<form action="" method="GET">
-							<button type="submit" class="remove">REMOVE</button>
+						<form action="BusinessHomePageServlet" method="GET">
+							<button type="submit" name="removeProduct" value="0" class="remove">REMOVE</button>
 						</form>		
 						
 						
@@ -84,11 +84,11 @@
 					
 						<h1 class="prodName">PRODUCT NAME: NAME</h1>
 						<h1 class="prodCat">PRODUCT CATEGORY: CATEGORY</h1>
-						<form action="" method="GET">
-							<button type="submit" class="edit-prod-button">EDIT</button>
+						<form action="BusinessHomePageServlet" method="GET">
+							<button type="submit" name="editProduct" value="1" class="edit-prod-button">EDIT</button>
 						</form>	
-						<form action="" method="GET">
-							<button type="submit" class="remove">REMOVE</button>
+						<form action="BusinessHomePageServlet" method="GET">
+							<button type="submit" name="removeProduct" value="1" class="remove">REMOVE</button>
 						</form>		
 						
 						
@@ -103,11 +103,11 @@
 					
 						<h1 class="prodName">PRODUCT NAME: NAME</h1>
 						<h1 class="prodCat">PRODUCT CATEGORY: CATEGORY</h1>
-						<form action="" method="GET">
-							<button type="submit" class="edit-prod-button">EDIT</button>
+						<form action="BusinessHomePageServlet" method="GET">
+							<button type="submit" name="editProduct" value="2" class="edit-prod-button">EDIT</button>
 						</form>	
-						<form action="" method="GET">
-							<button type="submit" class="remove">REMOVE</button>
+						<form action="BusinessHomePageServlet" method="GET">
+							<button type="submit" name="removeProduct" value="2" class="remove">REMOVE</button>
 						</form>		
 						
 						
@@ -118,8 +118,8 @@
 			
 			</div>
 			
-			<form action="" method="GET" id="email-notifs">
-				<button type="submit" id="add-product-button">ADD PRODUCT</button><br>
+			<form action="BusinessHomePageServlet" method="GET" id="email-notifs">
+				<button type="submit" name="addProduct" value="addProduct" id="add-product-button">ADD PRODUCT</button><br>
 			</form>	
 			
 		
@@ -139,7 +139,7 @@
 			
 				<h1 id="bioHead">BUSINESS DESCRIPTION:</h1><br>
 				
-				<form action="" method="GET" id="edit-bio">
+				<form action="BusinessHomePageServlet" method="GET" id="edit-bio">
 			
 			
 					<textarea name="bioText" id="bio">CHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE TCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE TCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE T

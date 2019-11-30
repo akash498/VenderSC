@@ -58,8 +58,57 @@ public class BusinessHomePageServlet extends HttpServlet {
 		// the parameter name for the new bio is "bioText"
 		else if(request.getParameter("editBio")!=null && request.getParameter("editBio").compareTo("editBio")==0) {
 			
+			// Business b = request.getBusiness();
+			// b.setDescription();
+			
+			// redirect the business back to their homepage
+			response.sendRedirect("BusinessHomePage.jsp");
+			
 		}
 		
+		// redirect the user to the edit product page
+		else if(request.getParameter("editProduct")!=null) {
+			
+			// int index = Integer.parseInt(request.getParameter("removeProduct"));
+			
+			// redirect the business back to their homepage
+			// response.sendRedirect("EditProductPage.jsp?product=" + index);
+			
+			response.sendRedirect("EditProductPage.jsp");
+			
+		}
+		
+		// remove the product and redirect back to the home page
+		else if(request.getParameter("removeProduct")!=null) {
+			
+			// int index = Integer.parseInt(request.getParameter("removeProduct"));
+			
+			// Business b = request.getBusiness();
+			// b.removeProduct(index);
+			
+			// redirect the business back to their homepage
+			response.sendRedirect("BusinessHomePage.jsp");
+			
+		}
+		
+		// redirect to add product page
+		else if(request.getParameter("addProduct")!=null && request.getParameter("addProduct").compareTo("addProduct")==0) {
+			
+			// redirect the business back to their homepage
+			response.sendRedirect("AddProductPage.jsp");
+			
+		}
+		
+		// log the user out and redirect to guest login page
+		else if(request.getParameter("logout")!=null && request.getParameter("logout").compareTo("logout")==0) {
+			
+			// Business b = request.getBusiness();
+			// b.logout();
+			
+			// redirect the business back to their homepage
+			response.sendRedirect("GuestHomePage.jsp");
+			
+		}
 		
 	}
 
