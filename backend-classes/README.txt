@@ -20,47 +20,48 @@ BusinessHomePageServlet.java: Status - Incomplete
 
 		The business's bio needs to be changed to the new bio. The servlet file has more details on this.
 
-	Edit Product: Status - Not Started
+	Edit Product: Status - Incomplete
 
-		This button has not been worked on yet. Please update.
+		This button needs to be modified so it interacts with the business that is currently logged in. More details are in the servlet.
 
-	Remove Product: Status - Not Started
+	Remove Product: Status - Incomplete
 
-		This Button has not been worked on yet. Please update.
+		This button needs to be modified so it interacts with the business that is currently logged in. More details are in the servlet.
 
-	Add Product: Status - Not Started
+	Add Product: Status - Incomplete
 
-		This button has not been worked on yet. Please update.
+		This button needs to be modified so it interacts with the business that is currently logged in. More details are in the servlet.
 
 BusinessHomePage.jsp: Status - Incomplete
 
 	NOTE (11/29/12019): the frontend aspect of this file was updated so please copy over the updated jsp AND css files associated.
 
+	NOTE #2: The buttons are complete from the jsp side. The servlet aspect of each button is not complete. See the servlet for more
+	details.
+
 	Loading Business Info: Status - Incomplete
 
-		I beleive that Josh was working on this, however I am not sure. Please update.
+		The business information needs to be parsed and generate the information needed by this page.
 
-	Edit Bio Button: Status - Incomplete 
+	Edit Bio Button: Status - Complete 
 
-		This page has had a change in implementation for the edit bio aspect. The bio is now a text field that can be edited
-		and by pressing the edit button, the new text should become the new bio and the user should be redirected back to 
-		BusinessHomePage.jsp with a new bio.
+		This button works as it should.
 
-	Email Button: Status - Incomplete
+	Email Button: Status - Complete
 
-		This button is implemented to send an email, however the business parsing needs to be implemented and tested.
+		This button works as it should.
 
-	Edit Product: Status - Not Started
+	Edit Product: Status - Complete
 
-		This button has not been worked on yet. Please update.
+		This button works as it should.
 
-	Remove Product: Status - Not Started
+	Remove Product: Status - Complete
 
-		This Button has not been worked on yet. Please update.
+		This button works as it should.
 
-	Add Product: Status - Not Started
+	Add Product: Status - Complete
 
-		This button has not been worked on yet. Please update.
+		This button works as it should.
 
 Email_Thread: Status - Complete!
 
