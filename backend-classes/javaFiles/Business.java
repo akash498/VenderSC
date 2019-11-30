@@ -73,7 +73,6 @@ public class Business {
 			st = conn.createStatement();
 			rs = st.executeQuery("SELECT * FROM Product WHERE businessID = "+ this.businessId);
 			while (rs.next()) {
-				rs.getInt("productID");
 				prods.add(new Product(rs.getString("name"), rs.getString("shortDescription"),rs.getString("longDescription"), rs.getInt("businessID"), rs.getInt("productID")));
 			}
 		} catch (SQLException e) {

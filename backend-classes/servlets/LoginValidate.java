@@ -16,6 +16,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import backend_classes.Business;
+
 /**
  * Servlet implementation class LoginValidate
  */
@@ -85,6 +87,9 @@ public class LoginValidate extends HttpServlet {
 						session.setAttribute("username", username);
 						session.setAttribute("favorite", "true");
 						request.setAttribute("error", "");
+						Business business = new Business(username);
+						session.setAttribute("business", business);
+						System.out.println("herererererererererererstuck");
 					}
 				}
 			}

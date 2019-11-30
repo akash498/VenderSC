@@ -1,12 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1" import="java.util.ArrayList"%>
+<%@ page import = "backend_classes.Business"%>
+<%@ page import = "backend_classes.Product"%>
+<%@ page import = "backend_classes.Business"%>
 <!DOCTYPE html>
 <html>
 <head>
 
 	<meta charset="ISO-8859-1">
 	<title>VendorSC</title>
-	<link rel="stylesheet" type="text/css" href="css/BusinessHomePage.css">
+	<link rel="stylesheet" type="text/css" href="BusinessHomePage.css">
 	<!-- 	Icon Library	 -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -14,6 +17,7 @@
 </head>
 <body>
 
+<%Business business = (Business)session.getAttribute("business"); %>
 <!-- Start of Header Div -->
 	<div id="header">
 	
@@ -22,7 +26,7 @@
 				
 			<div id="searchBar">
 			
-				<h1 id="busiTitle"></h1>
+				<h1 id="busiTitle"> <%=business.getName() %></h1>
 			
 			</div>
 				
@@ -58,6 +62,44 @@
 			<div class="bodyDiv">
 			
 <!-- EXAMPLE PRODUCTS START -->
+			
+			<% ArrayList<Product> products = business.getProducts();
+			
+			
+			
+			
+			
+			for (int i = 0; i < products.size(); i++ ) {%>
+				<div class="productBody">
+				
+					<img class="prodLogo" src="<%=products.get(i).getName()%>" alt="vendorSC logo">
+					<div class="prodInfo">
+					
+						<h1 class="prodName"><%products.get(i).getName(); %></h1>
+						<h1 class="prodCat">PRODUCT CATEGORY: <%products.get(i).getName(); %></h1>
+						<form action="BusinessHomePageServlet" method="GET">
+							<button type="submit" name="editProduct" value="<%=i%>" class="edit-prod-button">EDIT</button>
+						</form>	
+						<form action="BusinessHomePageServlet" method="GET">
+							<button type="submit" name="removeProduct" value="<%=i%>" class="remove">REMOVE</button>
+						</form>		
+						
+						
+					</div>
+				
+				</div>
+				
+				
+				
+			
+			
+			<%} %>
+			
+			
+			
+			
+			
+			<!--  
 				<div class="productBody">
 				
 					<img class="prodLogo" src="images/vendorSClogowithbackground.png" alt="vendorSC logo">
@@ -113,7 +155,7 @@
 						
 					</div>
 				
-				</div>
+				</div>-->
 <!-- EXAMPLE PRODUCTS END -->
 			
 			</div>
@@ -131,7 +173,7 @@
 			
 			<div class="headDiv">
 			
-				<h1 class="head">YOUR BIO</h1>
+				<h1 class="head">BIO</h1>
 			
 			</div>
 			
@@ -142,7 +184,7 @@
 				<form action="BusinessHomePageServlet" method="GET" id="edit-bio">
 			
 			
-					<textarea name="bioText" id="bio">CHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE TCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE TCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE THIS TO BE THE BUSINESS'S BIOCHANGE T
+					<textarea name="bioText" id="bio"><%=business.getDescription() %>
 					</textarea><br>
 					<button type="submit" name="editBio" value="editBio" id="edit-bio-button">EDIT</button>
 				
@@ -182,17 +224,7 @@
 </body>
 
 <script>
-var business = "<%=  session.getAttribute("business") %>";
-if (business==null ){
-	window.confirm("Business is null");
-	
-}
 
-                // Create a <li> node
-var businessTitle = document.createTextNode(business.getName());         
-document.getElementById("busiTitle").appendChild(businessTitle);
-var businessDesc = document.createTextNode(business.getDescription());         
-document.getElementById("bio").appendChild(businessDesc);
 
 
 
