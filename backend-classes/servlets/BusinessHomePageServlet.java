@@ -69,12 +69,7 @@ public class BusinessHomePageServlet extends HttpServlet {
 		// redirect the user to the edit product page
 		else if(request.getParameter("editProduct")!=null) {
 			
-			// int index = Integer.parseInt(request.getParameter("removeProduct"));
-			
-			// redirect the business back to their homepage
-			// response.sendRedirect("EditProductPage.jsp?product=" + index);
-			
-			response.sendRedirect("EditProductPage.jsp");
+			response.sendRedirect("EditProductPage.jsp?index=" + request.getParameter("editProduct"));
 			
 		}
 		
