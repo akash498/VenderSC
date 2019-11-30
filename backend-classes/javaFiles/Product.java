@@ -14,17 +14,20 @@ public class Product {
 	private int businessId;
 	private double rating;
 	private int productId;
-	private Boolean ratable;
+	private int ratable;
+	private String imagePath;
 	private ArrayList<Review> reviews;
 	// constructor
-	Product(String name_, String shortDescription_, String description_, int businessId_, int productId_) {
+	Product(String name_, String shortDescription_, String description_, int businessId_, int productId_, int ratable_, String imagePath_) {
 		setName(name_);
 		setShortDescription(shortDescription_);
 		setDescription(description_);
 		setBusinessId(businessId_);
 		setProductId(productId_);
+		setRatable(ratable_);
+		setImagePath(imagePath_);
 		// set the reviews and rating using the rating table in database
-		
+		setReviews();
 	}
 	// constructor - takes in productId and fills in the rest of members from product table
 	Product(int productId_) {
@@ -39,12 +42,9 @@ public class Product {
 			name = rs.getString("name");
 			description = rs.getString(("longDescription"));
 			shortDescription = rs.getString("shortDescription");
-			if (rs.getInt("ratable") == 0 ) {
-				ratable = false;
-			} else {
-				ratable = true;
-			}
+			ratable = rs.getInt("ratable");
 			businessId = rs.getInt("businessID");
+			imagePath = rs.getString("imageLocation");
 		} catch (SQLException e) {
 			System.out.println("erorrr");
 		}
@@ -89,12 +89,59 @@ public class Product {
 	}
 	// sets the reviews for this product by calling the rating database and finds the average rating 
 	public void setReviews() {
-		
+		double sumOfRatings = 0;
+		double numOfRatings = 0;
+		Connection conn = null;
+		Statement st = null;
+		ResultSet rs = null;
+		ArrayList<Review> reviews_ = new ArrayList<Review>();
+		try {
+			conn = DriverManager.getConnection("jdbc:mysql://google/vendorDB?cloudSqlInstance=vendorsc:us-central1:vendor&socketFactory=com.google.cloud.sql.mysql.SocketFactory&useSSL=false&user=vendor&password=0203");
+			st = conn.createStatement();
+			rs = st.executeQuery("SELECT * FROM Ratings WHERE productID = "+ this.productId);
+			// adds new reviews to be parsed
+			while (rs.next()) {
+				// TODO - see if fields are correct when database is not suspended
+				reviews_.add(new Review(rs.getString("reviewText"), rs.getInt("userID"),rs.getInt("productID"), rs.getInt("rating")));
+				sumOfRatings += rs.getInt("rating");
+				numOfRatings++;
+			}
+		} catch (SQLException e) {
+			System.out.println("erorrr");
+		}
+		reviews = reviews_;
+		rating = sumOfRatings / numOfRatings;
 	}
 	
 	// add a review for this product, must take in a user's id
-	public void addReview(int userId) {
+	public void addReview(int userId, String reviewText, int rating) {
+		Connection conn = null;
+		Statement st = null;
+
+		try {
+			conn = DriverManager.getConnection("jdbc:mysql://google/vendorDB?cloudSqlInstance=vendorsc:us-central1:vendor&socketFactory=com.google.cloud.sql.mysql.SocketFactory&useSSL=false&user=vendor&password=0203");
+			st = conn.createStatement();
+			// TODO - put correct SQL string when database is not suspended
+			st.executeUpdate("INSERT INTO Rating ");
+			// add new review to be parsed
+		    reviews.add(new Review(reviewText, userId, this.productId, rating));
 		
+		} catch (SQLException e) {
+			System.out.println("erorrr");
+		}
+	}
+	
+	public int getRatable() {
+		return ratable;
+	}
+	public void setRatable(int ratable) {
+		this.ratable = ratable;
+	}
+	public String getImagePath() {
+		return imagePath;
+	}
+	public void setImagePath(String imagePath) {
+		this.imagePath = imagePath;
 	}
 	
 }

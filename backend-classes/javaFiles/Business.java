@@ -11,7 +11,9 @@ public class Business {
 	private int businessId;
 	private String name;
 	private String description;
+	private String imagePath;
 	private ArrayList<Product> products;
+	private Boolean emailOn;
 	// constructor - takes in business id and fills in other members from database
 	public Business(String username) {
 		//businessId = id;
@@ -25,15 +27,15 @@ public class Business {
 			ps.setString(1, username);
 			rs = ps.executeQuery();
 			if (rs.next()) {
-					System.out.println("here1?");
-			name = rs.getString("name");
-					System.out.println("here2?");
-
-			description = rs.getString("longDescription");
-			System.out.println(description);
-
-			businessId = rs.getInt("businessID");
-			
+				System.out.println("here1?");
+				name = rs.getString("name");
+				System.out.println("here2?");
+				description = rs.getString("longDescription");
+				System.out.println(description);
+				businessId = rs.getInt("businessID");
+				imagePath = rs.getString("imageLocation");
+				// TODO - create new emailOn column in database
+				emailOn = true;
 			}
 		} catch (SQLException e) {
 			System.out.println(e);
@@ -73,7 +75,7 @@ public class Business {
 			st = conn.createStatement();
 			rs = st.executeQuery("SELECT * FROM Product WHERE businessID = "+ this.businessId);
 			while (rs.next()) {
-				prods.add(new Product(rs.getString("name"), rs.getString("shortDescription"),rs.getString("longDescription"), rs.getInt("businessID"), rs.getInt("productID")));
+				prods.add(new Product(rs.getString("name"), rs.getString("shortDescription"),rs.getString("longDescription"), rs.getInt("businessID"), rs.getInt("productID"), rs.getInt("ratable"), rs.getString("imageLocation")));
 			}
 		} catch (SQLException e) {
 			System.out.println("erorrr");
@@ -106,6 +108,12 @@ public class Business {
 			System.out.println("erorrr");
 		}
 		setProducts();
+	}
+	public Boolean getEmailOn() {
+		return emailOn;
+	}
+	public void setEmailOn() {
+		this.emailOn = !this.emailOn;
 	}
 	
 }

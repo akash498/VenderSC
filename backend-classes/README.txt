@@ -2,9 +2,12 @@ Please update this file when you do work on the backend.
 
 NOTE: When making a servlet, INCLUDE "Servlet" in the end of the class name.
 
+Product.java: Status - Incomplete
+	Need to update SQL string for insert when database is up and running
+	
 Business.java: Status - Unknown
-
 	I added a boolean for email logic.
+	TODO- add emailOn column to database to store whether businesses have email notifications on or off
 
 EditProductPageServlet.java: Status - Incomplete
 
