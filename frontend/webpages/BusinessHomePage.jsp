@@ -74,7 +74,7 @@
 				
 				<div class="productBody">
 				
-					<img class="prodLogo" src="" alt="vendorSC logo">
+					<img class="prodLogo" src="<%=products.get(i).getImagePath() %>" alt="vendorSC logo">
 					<div class="prodInfo">
 					
 						<h1 class="prodName"><%=products.get(i).getName() %></h1>

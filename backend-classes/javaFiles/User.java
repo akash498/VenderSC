@@ -60,8 +60,9 @@ public class User {
 	}
 
 	//constructor
-	User(int ID) {
-		UserID = ID;
+	public User(String username) {
+		this.Username = username;
+		this.ProductsPurchased = new ArrayList<Integer>();
 		//fill the rest of the member variables by calling the database using JDBC
 		Connection conn = null;
 		PreparedStatement ps = null;
@@ -69,32 +70,35 @@ public class User {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection("jdbc:mysql://google/vendorDB?cloudSqlInstance=vendorsc:us-central1:vendor&socketFactory=com.google.cloud.sql.mysql.SocketFactory&useSSL=false&user=vendor&password=0203");
-			ps = conn.prepareStatement("SELECT * FROM vendorDB.? WHERE UserID = ?");
-			ps.setString(1, "Purchase");
-			ps.setString(2, Integer.toString(UserID));
+			ps = conn.prepareStatement("SELECT * FROM Users WHERE username =?");
+			//reusing the prepared statement with different params to get other member variables
+			ps.setString(1, username);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+			Username = rs.getString("username");
+			Password = rs.getString("password");
+			Email = rs.getString("email");
+			Name = rs.getString("name");
+			UserID = rs.getInt("userID");
+			}
+			
+			ps = conn.prepareStatement("SELECT * FROM Purchases WHERE userID =?");
+			ps.setInt(1, this.UserID);
 			rs = ps.executeQuery();
 			//filling the productsPurchased ArrayList
 			while (rs.next()) {
 				ProductsPurchased.add(Integer.parseInt(rs.getString("ProductID")));
 			}
-			//reusing the prepared statement with different params to get other member variables
-			ps.setString(1, "User");
-			ps.setString(2, Integer.toString(UserID));
-			rs = ps.executeQuery();
-			Username = rs.getString("username");
-			Password = rs.getString("password");
-			Email = rs.getString("email");
-			Name = rs.getString("name");
-
+			
 			//I am done with the connection and prepared statement. I have gathered all the data I want from the DB
 			conn.close();
 			ps.close();
 		}
 		catch (SQLException e) {
-			System.out.println("ERROR");
+			System.out.println(e);
 		}
 		catch (ClassNotFoundException e) {
-			System.out.println("ERROR");
+			System.out.println(e);
 		}
 	}
 

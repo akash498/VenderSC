@@ -30,23 +30,25 @@ public class Product {
 		setReviews();
 	}
 	// constructor - takes in productId and fills in the rest of members from product table
-	Product(int productId_) {
+	public Product(int productId_) {
 		productId = productId_;
 		Connection conn = null;
 		Statement st = null;
 		ResultSet rs = null;
 		try {
-			conn = DriverManager.getConnection("url");
+			conn = DriverManager.getConnection("jdbc:mysql://google/vendorDB?cloudSqlInstance=vendorsc:us-central1:vendor&socketFactory=com.google.cloud.sql.mysql.SocketFactory&useSSL=false&user=vendor&password=0203");
 			st = conn.createStatement();
-			rs = st.executeQuery("SELECT * FROM vendorDB.Product WHERE productID = "+ productId);
+			rs = st.executeQuery("SELECT * FROM Product WHERE productID = "+ productId);
+			if (rs.next()) {
 			name = rs.getString("name");
 			description = rs.getString(("longDescription"));
 			shortDescription = rs.getString("shortDescription");
 			ratable = rs.getInt("ratable");
 			businessId = rs.getInt("businessID");
 			imagePath = rs.getString("imageLocation");
+			}
 		} catch (SQLException e) {
-			System.out.println("erorrr");
+			System.out.println(e);
 		}
 		setReviews();
 	}
@@ -98,7 +100,7 @@ public class Product {
 		try {
 			conn = DriverManager.getConnection("jdbc:mysql://google/vendorDB?cloudSqlInstance=vendorsc:us-central1:vendor&socketFactory=com.google.cloud.sql.mysql.SocketFactory&useSSL=false&user=vendor&password=0203");
 			st = conn.createStatement();
-			rs = st.executeQuery("SELECT * FROM Ratings WHERE productID = "+ this.productId);
+			rs = st.executeQuery("SELECT * FROM Rating WHERE productID = "+ this.productId);
 			// adds new reviews to be parsed
 			while (rs.next()) {
 				// TODO - see if fields are correct when database is not suspended
@@ -107,7 +109,7 @@ public class Product {
 				numOfRatings++;
 			}
 		} catch (SQLException e) {
-			System.out.println("erorrr");
+			System.out.println(e);
 		}
 		reviews = reviews_;
 		rating = sumOfRatings / numOfRatings;
