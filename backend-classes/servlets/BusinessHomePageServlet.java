@@ -32,21 +32,19 @@ public class BusinessHomePageServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		Business b = (Business) request.getSession().getAttribute("business");
+		
 		// This is done to check if the servlet was called by the email button
 		if(request.getParameter("email")!=null && request.getParameter("email").compareTo("email")==0) {
 			
-			// TODO - Below is the pseudo code that needs to be translated
 			
-			// Business b = request.getBusiness();
-			// b.flipEmailsOn();
-			// if(b.areEmailsOn()){
-			// 	Email_Thread et = new Email_Thread(b.getEmail(), "Your email notifications have been turned on!", "Email Notifications - VendorSC" );
-			// }
-			// else {
-			// 	Email_Thread et = new Email_Thread(b.getEmail(), "Your email notifications have been turned off!", "Email Notifications - VendorSC" );
-			// }
-			
-			Email_Thread et = new Email_Thread("samskates.chase@gmail.com", "Your email notifications have been turned on!", "Email Notifications - VendorSC" );
+			b.setEmailOn();
+			if(b.getEmailOn()){
+			 	Email_Thread et = new Email_Thread(b.getEmail(), "Your email notifications have been turned on!", "Email Notifications - VendorSC" );
+			}
+			else {
+			 	Email_Thread et = new Email_Thread(b.getEmail(), "Your email notifications have been turned off!", "Email Notifications - VendorSC" );
+			}   
 			
 			// redirect the business back to their homepage
 			response.sendRedirect("BusinessHomePage.jsp");
@@ -57,9 +55,8 @@ public class BusinessHomePageServlet extends HttpServlet {
 		// This should take the input text from this form and set it as the new bio for the business
 		// the parameter name for the new bio is "bioText"
 		else if(request.getParameter("editBio")!=null && request.getParameter("editBio").compareTo("editBio")==0) {
-			
-			// Business b = request.getBusiness();
-			// b.setDescription();
+
+			b.setDescription(request.getParameter("bioText"));
 			
 			// redirect the business back to their homepage
 			response.sendRedirect("BusinessHomePage.jsp");
@@ -76,10 +73,10 @@ public class BusinessHomePageServlet extends HttpServlet {
 		// remove the product and redirect back to the home page
 		else if(request.getParameter("removeProduct")!=null) {
 			
-			// int index = Integer.parseInt(request.getParameter("removeProduct"));
+			int index = Integer.parseInt(request.getParameter("removeProduct"));
 			
-			// Business b = request.getBusiness();
-			// b.removeProduct(index);
+			b.removeProduct(index);
+			request.getSession().setAttribute("business", b);
 			
 			// redirect the business back to their homepage
 			response.sendRedirect("BusinessHomePage.jsp");
@@ -97,8 +94,7 @@ public class BusinessHomePageServlet extends HttpServlet {
 		// log the user out and redirect to guest login page
 		else if(request.getParameter("logout")!=null && request.getParameter("logout").compareTo("logout")==0) {
 			
-			// Business b = request.getBusiness();
-			// b.logout();
+			request.getSession().setAttribute("business", null);
 			
 			// redirect the business back to their homepage
 			response.sendRedirect("GuestHomePage.jsp");

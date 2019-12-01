@@ -1,4 +1,4 @@
-package backend_classes;
+package backend;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -12,6 +12,7 @@ public class Business {
 	private String name;
 	private String description;
 	private String imagePath;
+	private String email;
 	private ArrayList<Product> products;
 	private Boolean emailOn;
 	// constructor - takes in business id and fills in other members from database
@@ -34,6 +35,8 @@ public class Business {
 				System.out.println(description);
 				businessId = rs.getInt("businessID");
 				imagePath = rs.getString("imageLocation");
+				email = rs.getString("email");
+				
 				// TODO - create new emailOn column in database
 				emailOn = true;
 			}
@@ -43,6 +46,12 @@ public class Business {
 		setProducts();
 	}
 	// getters and setters
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String e) {
+		email = e;
+	}
 	public int getBusinessId() {
 		return businessId;
 	}
@@ -98,16 +107,19 @@ public class Business {
 	}
 	// removes a product from the product table in the database with the business id
 	public void removeProduct(int productId) {
+		
+		int id = products.get(productId).getProductId();
+		
 		Connection conn = null;
 		Statement st = null;
 		try {
 			conn = DriverManager.getConnection("jdbc:mysql://google/vendorDB?cloudSqlInstance=vendorsc:us-central1:vendor&socketFactory=com.google.cloud.sql.mysql.SocketFactory&useSSL=false&user=vendor&password=0203");
 			st = conn.createStatement();
-			st.executeUpdate("DELETE FROM Product WHERE productID = "+ Integer.toString(productId) + ")");
+			st.executeUpdate("DELETE FROM Product WHERE productID="+ id);
 		} catch (SQLException e) {
 			System.out.println("erorrr");
 		}
-		setProducts();
+		products.remove(productId);
 	}
 	public Boolean getEmailOn() {
 		return emailOn;

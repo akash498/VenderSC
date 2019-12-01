@@ -39,9 +39,17 @@ public class AddProductPageServlet extends HttpServlet {
 		
 		// The image needs to be saved in a folder located in WebContent called "images". Then the absolute path needs to be saved to
 		// a variable called imgPath
+		String imgPath = "";
 		
-		// Business b = request.getBusiness();
-		// b.addProduct(request.getParameter("prodName"), request.getParameter("prodDesc"), imgPath, request.getParameter("ratable"));
+		Business b = (Business)request.getSession().getAttribute("business");
+		int rate = -1;
+		if(request.getParameter("ratable").compareTo("yes")==0) {
+			rate = 1;
+		}
+		else {
+			rate = 0;
+		}
+		b.addProduct(request.getParameter("prodName"), request.getParameter("prodDesc"), imgPath, rate);
 		
 		// redirect the business back to their homepage if successful
 		response.sendRedirect("BusinessHomePage.jsp");

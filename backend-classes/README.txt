@@ -2,71 +2,70 @@ Please update this file when you do work on the backend.
 
 NOTE: When making a servlet, INCLUDE "Servlet" in the end of the class name.
 
-Product.java: Status - Incomplete
-	Need to update SQL string for insert when database is up and running
-	
-Business.java: Status - Unknown
-	I added a boolean for email logic.
-	TODO- add emailOn column to database to store whether businesses have email notifications on or off
+
+
+LoginServlet: Status - Complete
+
+	Working as expected.
+
+Business.java: Status - Complete
+
+	Working as expected.
 
 EditProductPageServlet.java: Status - Incomplete
 
-	Business class needs to be implemented so the data is stored in the business.
+	Business class that is logged in is successfully updated.
 
 	We need to have the image that was uploaded saved in a folder located in WebContent called "images".
 
-EditProductPage.jsp: Status - Incomplete
+EditProductPage.jsp: Status - Complete
 	
-	Business Product information needs to load as place holders
+	Business Product information loads correctly.
 	
 	All buttons and input fields behave as expected.
 
 AddProductPageServlet.java: Status - Incomplete
 
-	Business class needs to be implemented so the data is stored in the business.
+	Business class that is logged in is successfully updated.
 
 	We need to have the image that was uploaded saved in a folder located in WebContent called "images".
 
-AddProductPage.jsp: Status - Complete
+AddProductPage.jsp: Status - Complete!
 
 	All buttons and input fields behave as expected.
 
-BusinessHomePageServlet.java: Status - Incomplete
+BusinessHomePageServlet.java: Status - Complete!
 
 	This is the servlet that all buttons in BusinessHomePage.jsp should redirect to. Depending on the URL parameters, the servlet should
 	respond appropriately.
 
-	Email Button: Status - Incomplete
+	Email Button: Status - Complete
 
-		Someone who knows how the business class is being passed needs to implement the pseudo code provided. The thread code is
-		correct.
+		Email is successfully send to the business's registered email
 
-	Edit Bio: Status - Incomplete
+	Edit Bio: Status - Complete
 
-		The business's bio needs to be changed to the new bio. The servlet file has more details on this.
+		The bio is successfully updated.
 
-	Edit Product: Status - Incomplete
+	Edit Product: Status - Complete
 
-		This button needs to be modified so it interacts with the business that is currently logged in. More details are in the servlet.
+		This button redirects to edit product page correctly.
 
-	Remove Product: Status - Incomplete
+	Remove Product: Status - Complete
 
-		This button needs to remove the product from the business that is logged in.
+		This button removes the product correctly.
 
-	Add Product: Status - Incomplete
+	Add Product: Status - Complete
 
-		This button needs to be modified so it interacts with the business that is currently logged in. More details are in the servlet.
+		This button redirects to add product page correctly.
 
-BusinessHomePage.jsp: Status - Incomplete
+BusinessHomePage.jsp: Status - Complete!
 
-	NOTE (11/29/12019): the frontend aspect of this file was updated so please copy over the updated jsp AND css files associated.
+	NOTE (11/30/12019): the frontend aspect of this file was updated so please copy over the updated jsp AND css files associated.
 
-	NOTE #2: The buttons are complete from the jsp side. The servlet aspect of each button is not complete. See the servlet for more
-	details.
+	Loading Business Info: Status - Complete
 
-	Loading Business Info: Status - Incomplete
-
-		The business information needs to be parsed and generate the information needed by this page.
+		The business information is correctly parsed.
 
 	Edit Bio Button: Status - Complete 
 

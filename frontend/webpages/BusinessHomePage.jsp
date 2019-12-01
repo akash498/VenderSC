@@ -1,15 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1" import="java.util.ArrayList"%>
-<%@ page import = "backend_classes.Business"%>
-<%@ page import = "backend_classes.Product"%>
-<%@ page import = "backend_classes.Business"%>
+<%@ page import = "backend.Business"%>
+<%@ page import = "backend.Product"%>
+<%@ page import = "backend.Business"%>
 <!DOCTYPE html>
 <html>
 <head>
 
 	<meta charset="ISO-8859-1">
 	<title>VendorSC</title>
-	<link rel="stylesheet" type="text/css" href="BusinessHomePage.css">
+	<link rel="stylesheet" type="text/css" href="css/BusinessHomePage.css">
 	<!-- 	Icon Library	 -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -65,10 +65,6 @@
 			
 			<% ArrayList<Product> products = business.getProducts();
 			
-			
-			
-			
-			
 			for (int i = 0; i < products.size(); i++ ) {%>
 				
 				
@@ -77,8 +73,8 @@
 					<img class="prodLogo" src="<%=products.get(i).getImagePath() %>" alt="vendorSC logo">
 					<div class="prodInfo">
 					
-						<h1 class="prodName"><%=products.get(i).getName() %></h1>
-						<h1 class="prodCat">PRODUCT CATEGORY:<%=products.get(i).getName() %></h1>
+						<h1 class="prodName">Name: <%=products.get(i).getName() %></h1>
+						<h1 class="prodCat">PRODUCT DESCRIPTION: <%=products.get(i).getDescription() %></h1>
 						<form action="BusinessHomePageServlet" method="GET">
 							<button type="submit" name="editProduct" value="<%=i%>" class="edit-prod-button">EDIT</button>
 						</form>	
@@ -97,67 +93,6 @@
 			
 			<%} %>
 			
-			
-			
-			
-			
-			<!--  
-				<div class="productBody">
-				
-					<img class="prodLogo" src="images/vendorSClogowithbackground.png" alt="vendorSC logo">
-					<div class="prodInfo">
-					
-						<h1 class="prodName">PRODUCT NAME: NAME</h1>
-						<h1 class="prodCat">PRODUCT CATEGORY: CATEGORY</h1>
-						<form action="BusinessHomePageServlet" method="GET">
-							<button type="submit" name="editProduct" value="0" class="edit-prod-button">EDIT</button>
-						</form>	
-						<form action="BusinessHomePageServlet" method="GET">
-							<button type="submit" name="removeProduct" value="0" class="remove">REMOVE</button>
-						</form>		
-						
-						
-					</div>
-				
-				</div>
-				
-				<div class="productBody">
-				
-					<img class="prodLogo" src="images/vendorSClogowithbackground.png" alt="vendorSC logo">
-					<div class="prodInfo">
-					
-						<h1 class="prodName">PRODUCT NAME: NAME</h1>
-						<h1 class="prodCat">PRODUCT CATEGORY: CATEGORY</h1>
-						<form action="BusinessHomePageServlet" method="GET">
-							<button type="submit" name="editProduct" value="1" class="edit-prod-button">EDIT</button>
-						</form>	
-						<form action="BusinessHomePageServlet" method="GET">
-							<button type="submit" name="removeProduct" value="1" class="remove">REMOVE</button>
-						</form>		
-						
-						
-					</div>
-				
-				</div>
-				
-				<div class="productBody">
-				
-					<img class="prodLogo" src="images/vendorSClogowithbackground.png" alt="vendorSC logo">
-					<div class="prodInfo">
-					
-						<h1 class="prodName">PRODUCT NAME: NAME</h1>
-						<h1 class="prodCat">PRODUCT CATEGORY: CATEGORY</h1>
-						<form action="BusinessHomePageServlet" method="GET">
-							<button type="submit" name="editProduct" value="2" class="edit-prod-button">EDIT</button>
-						</form>	
-						<form action="BusinessHomePageServlet" method="GET">
-							<button type="submit" name="removeProduct" value="2" class="remove">REMOVE</button>
-						</form>		
-						
-						
-					</div>
-				
-				</div>-->
 <!-- EXAMPLE PRODUCTS END -->
 			
 			</div>
@@ -225,20 +160,4 @@
 	
 </body>
 
-<script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</script>
 </html>

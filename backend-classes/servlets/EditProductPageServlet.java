@@ -30,10 +30,10 @@ public class EditProductPageServlet extends HttpServlet {
 		// check to make sure that all fields contain valid information
 		if(request.getParameter("prodName")==null || request.getParameter("prodDesc")==null || request.getParameter("prodName").trim().compareTo("")==0 
 			|| request.getParameter("prodDesc").trim().compareTo("")==0 || request.getParameter("ratable").trim().compareTo("")==0 
-			|| request.getParameter("image").trim().compareTo("")==0) {
+			|| request.getParameter("myfile").trim().compareTo("")==0) {
 					
 			// redirect the business back to the page
-			response.sendRedirect("EditProductPage.jsp?index=" + request.getSession().getAttribute("index") + "&Error=blankFields");
+			response.sendRedirect("BusinessHomePage.jsp?index=" + ((String) request.getSession().getAttribute("index")));
 			return;
 					
 		}
@@ -42,8 +42,20 @@ public class EditProductPageServlet extends HttpServlet {
 		// The image needs to be saved in a folder located in WebContent called "images". Then the absolute path needs to be saved to
 		// a variable called imgPath
 				
-		// Business b = request.getBusiness();
-		// b.addProduct(request.getParameter("prodName"), request.getParameter("prodDesc"), imgPath, request.getParameter("ratable"));
+		Business b = (Business)request.getSession().getAttribute("business");
+		int rate = -1;
+		if(request.getParameter("ratable").compareTo("yes")==0) {
+			rate = 1;
+		}
+		else {
+			rate = 0;
+		}
+		int index = Integer.parseInt((String) request.getSession().getAttribute("index"));
+		Product p = b.getProducts().get(index);
+		p.setName(request.getParameter("prodName"));
+		p.setDescription(request.getParameter("prodDesc"));
+		p.setRatable(rate);
+		
 				
 		// redirect the business back to their homepage if successful
 		response.sendRedirect("BusinessHomePage.jsp");

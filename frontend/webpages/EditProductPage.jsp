@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1" import="java.util.ArrayList"%>
+    <%@ page import = "backend.Business"%>
+	<%@ page import = "backend.Product"%>
+	<%@ page import = "backend.Business"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,8 +45,9 @@
 
 </head>
 <body>
-
-	<% session.setAttribute("index", request.getParameter("index")); %>
+	<%	Business business = (Business)session.getAttribute("business"); 
+	 	request.getSession().setAttribute("business", business);
+		session.setAttribute("index", request.getParameter("index")); %>
 
 <!-- Start of Header Div -->
 	<div id="header">
@@ -53,7 +57,7 @@
 				
 			<div id="searchBar">
 			
-				<h1 id="busiTitle">BUSINESS TITLE</h1>
+				<h1 id="busiTitle"><%= business.getName() %></h1>
 			
 			</div>
 				
@@ -65,6 +69,11 @@
 
 
 <!-- Start of Body Div -->
+	
+	<% ArrayList<Product> products = business.getProducts(); 
+		Product prod = products.get(Integer.parseInt(request.getParameter("index")));
+	%>
+	
 
 	<div id="innerDiv">
 	
@@ -76,18 +85,17 @@
 				
 				<div id="formDiv">
 					<label id="productTitle">Product Name:</label><br>
-					<input type="text" name="" class="form-control" id="productText" placeholder="ADD A PRODUCT NAME:">
+					<input type="text" name="prodName" class="form-control" id="productText" placeholder=<%= prod.getName() %>>
 					<br><label id="productDescription">Description:</label><br>
-					<input type="text" name="" class="form-control" id="productDescribed" placeholder="ADD A PRODUCT DESCRIPTION">
+					<input type="text" name="prodDesc" class="form-control" id="productDescribed" placeholder=<%= prod.getDescription() %>>
 					<br>
 					<div id="imageUpload">
 						<h1 id="imageLabel">ADD IMAGE:</h1>
-						<!-- <input id="fileChooser" type="file" name="pic" accept="image/*"> -->
 			
 						<br>
 						<div class="upload-btn-wrapper">
 							<button class="btn-upload">Upload a file</button>
-							<input id="fileBrowser" type="file" name="myfile" accept="image/*">
+							<input id="fileBrowser" type="file" name="myfile" accept="image/*" placeholder=<%= prod.getImagePath() %>>
 						</div>
 						
 						
@@ -95,9 +103,16 @@
 					<div id="rateDiv">
 						<h1 id="rateLabel">DISPLAY RATING:</h1>
 						<br>
-						<button onclick="updateRate(1)" type="button" id="yes">YES</button>
-						<button onclick="updateRate(0)" type="button" id="no">NO</button>
-						<input type="hidden" name="ratable" id="ratable" value="" />
+						<% if(prod.getRatable()!=0) { %>
+							<button onclick="updateRate(1)" type="button" id="yes" style="background-color:#929292;color:#C4C4C4;">YES</button>
+							<button onclick="updateRate(0)" type="button" id="no" style="background-color:#C4C4C4;color:#929292;">NO</button>
+							<input type="hidden" name="ratable" id="ratable" value="no" />
+						<% } %>
+						<% if(prod.getRatable()==0) { %>
+							<button onclick="updateRate(1)" type="button" id="yes" style="background-color:#C4C4C4;color:#929292;">YES</button>
+							<button onclick="updateRate(0)" type="button" id="no" style="background-color:#929292;color:#C4C4C4;">NO</button>
+							<input type="hidden" name="ratable" id="ratable" value="yes" />
+						<%} %>
 					</div>
 					<br>
 					<button type="submit" id="submit">SUBMIT FORM FOR VERIFICATION</button><br>
