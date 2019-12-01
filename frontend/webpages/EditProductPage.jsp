@@ -81,13 +81,13 @@
 		
 			<h1 id="addProd">EDIT PRODUCT INFO</h1>
 			
-			<form action="EditProductPageServlet" method="GET" id="search-form">
+			<form action="EditProductPageServlet" method="POST" id="search-form" enctype="multipart/form-data">
 				
 				<div id="formDiv">
 					<label id="productTitle">Product Name:</label><br>
-					<input type="text" name="prodName" class="form-control" id="productText" placeholder=<%= prod.getName() %>>
+					<input type="text" name="prodName" class="form-control" id="productText" placeholder="<%= prod.getName() %>">
 					<br><label id="productDescription">Description:</label><br>
-					<input type="text" name="prodDesc" class="form-control" id="productDescribed" placeholder=<%= prod.getDescription() %>>
+					<input type="text" name="prodDesc" class="form-control" id="productDescribed" placeholder="<%= prod.getDescription() %>">
 					<br>
 					<div id="imageUpload">
 						<h1 id="imageLabel">ADD IMAGE:</h1>
@@ -95,7 +95,7 @@
 						<br>
 						<div class="upload-btn-wrapper">
 							<button class="btn-upload">Upload a file</button>
-							<input id="fileBrowser" type="file" name="myfile" accept="image/*" placeholder=<%= prod.getImagePath() %>>
+							<input type="file" name="image" accept="image/*" id="fileBrowser" placeholder="c:\FAKEPATH\<%= prod.getImagePath() %>">
 						</div>
 						
 						

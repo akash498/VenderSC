@@ -10,15 +10,18 @@ import java.util.regex.Pattern;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 
 /**
  * Servlet implementation class AddProductPageServlet
  */
 @WebServlet("/AddProductPageServlet")
+@MultipartConfig() 
 public class AddProductPageServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -43,12 +46,14 @@ public class AddProductPageServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
-
+		
 		// check to make sure that all fields contain valid information
-		if(request.getParameter("prodName").trim().compareTo("")==0 || request.getParameter("prodDesc").trim().compareTo("")==0
-						|| request.getParameter("ratable").trim().compareTo("")==0 || request.getPart("image").getSize() == 0) {
-					//redirect the business back to the page
-					response.sendRedirect("AddProductPage.jsp?Error=blankFields");
+		if(request.getPart("prodName")==null || request.getPart("prodDesc")==null || request.getParameter("prodName").trim().compareTo("")==0 
+				|| request.getParameter("prodDesc").trim().compareTo("")==0
+				|| request.getParameter("ratable").trim().compareTo("")==0 || request.getPart("image").getSize() == 0) {
+				//redirect the business back to the page
+				
+				response.sendRedirect("AddProductPage.jsp?Error=blankFields");
 		}
 
 		// The image needs to be saved in a folder located in WebContent called "images". Then the absolute path needs to be saved to
@@ -59,10 +64,11 @@ public class AddProductPageServlet extends HttpServlet {
 			// a variable called imgPath
 
 			// UPDATE This to the absolute path of the images folder in the master project
-			File uploads = new File("/Users/willygarcia/eclipse-workspace/vendorSCpart2/WebContent/images");
-
+			File uploads = new File("c:\\Users\\Sam\\eclipse-workspace\\Final_Project_CSCI201\\WebContent\\images");
+			
 			Part filePart = request.getPart("image");
 			String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString();
+			String imgPath = "images/" + fileName;
 			File file = new File(uploads, fileName);
 
 			// Check to see if a file with this name already exists if it does, give it a unique name
@@ -84,7 +90,10 @@ public class AddProductPageServlet extends HttpServlet {
 			    Files.copy(input, file.toPath(), StandardCopyOption.REPLACE_EXISTING);
 			}
 			// Store the absolute path of the newly written image
-			String imgPath = file.toString();
+			
+			
+			System.out.println(imgPath);
+			
 			Business b = (Business)request.getSession().getAttribute("business");
 			int rate = -1;
 			if(request.getParameter("ratable").compareTo("yes")==0) {

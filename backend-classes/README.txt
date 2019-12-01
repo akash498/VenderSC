@@ -2,33 +2,27 @@ Please update this file when you do work on the backend.
 
 NOTE: When making a servlet, INCLUDE "Servlet" in the end of the class name.
 
+LoginServlet: Status - Incomplete
 
+	Need to update image loading.
 
-LoginServlet: Status - Complete
-
-	Working as expected.
-
-Business.java: Status - Complete
+Business.java: Status - Complete!
 
 	Working as expected.
 
-EditProductPageServlet.java: Status - Incomplete
+EditProductPageServlet.java: Status - Complete!
 
-	Business class that is logged in is successfully updated.
+	Works as expected.
 
-	We need to have the image that was uploaded saved in a folder located in WebContent called "images".
-
-EditProductPage.jsp: Status - Complete
+EditProductPage.jsp: Status - Complete!
 	
 	Business Product information loads correctly.
 	
 	All buttons and input fields behave as expected.
 
-AddProductPageServlet.java: Status - Incomplete
+AddProductPageServlet.java: Status - Complete!
 
-	Business class that is logged in is successfully updated.
-
-	We need to have the image that was uploaded saved in a folder located in WebContent called "images".
+	Works as expected.
 
 AddProductPage.jsp: Status - Complete!
 
