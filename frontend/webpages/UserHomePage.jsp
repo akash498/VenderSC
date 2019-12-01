@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1" import="java.util.*"%>
+<%@ page import = "backend_classes.Business"%>
+<%@ page import = "backend_classes.Product"%>
+<%@ page import = "backend_classes.User"%>
+<%@ page import = "java.sql.*" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +17,7 @@
 
 </head>
 <body>
-
+<%User user = (User)session.getAttribute("user"); %>
 <!-- Start of Header Div -->
 	<div id="header">
 	
@@ -64,14 +68,53 @@
 			<div class="bodyDiv">
 			
 <!-- EXAMPLE PRODUCTS START -->
-				<div class="productBody">
+				<%Connection conn = null;
+				PreparedStatement ps = null;
+				ResultSet rs = null;
+				ArrayList <Product> products = new ArrayList <Product>();
+				try {
+					Class.forName("com.mysql.jdbc.Driver");
+					conn = DriverManager.getConnection("jdbc:mysql://google/vendorDB?cloudSqlInstance=vendorsc:us-central1:vendor&socketFactory=com.google.cloud.sql.mysql.SocketFactory&useSSL=false&user=vendor&password=0203");
+					ps = conn.prepareStatement("SELECT * FROM Product");
+					rs = ps.executeQuery();
+					while (rs.next()) {				
+						Product prod = new Product(rs.getInt("productID"));
+						products.add(prod);
+					}
+				}
+				finally {conn.close();
+				ps.close();}
 				
-					<img class="prodLogo" src="../images/vendorSClogowithbackground.png" alt="vendorSC logo">
+				
+				int count = 0;
+				ArrayList<Integer> indices = new ArrayList <Integer>();
+				if (products.size() == 0){%>
+					<div class="productBody">
+				
+					<h1>No Recommended Products Available </h1>
+				
+				</div>
+				<% }
+				else{
+					while (count < products.size()){
+				
+					int number = (int) (Math.random() * products.size()-1);
+					if (indices.contains(number) || user.hasPurchased(products.get(number))){
+						count++;
+						continue;
+					}
+					else{
+					indices.add(number);
+					%>
+					
+					<div class="productBody">
+				
+					<img class="prodLogo" src="<%=products.get(number).getImagePath()%>" alt="vendorSC logo">
 					<div class="prodInfo">
 					
-						<h1 class="prodName">PRODUCT NAME: NAME</h1>
-						<h1 class="prodCat">PRODUCT CATEGORY: CATEGORY</h1>
-						<h1 class="prodCat">RATING: 4.5</h1>
+						<h1 class="prodName">PRODUCT NAME: <%=products.get(number).getName() %> </h1>
+						<h1 class="prodCat">PRODUCT CATEGORY: <%=products.get(number).getName() %></h1>
+						<h1 class="prodCat">RATING: <%=products.get(number).getRating() %></h1>
 						
 						<form action="" method="GET">
 							<button type="submit" class="prod-purchase">PURCHASE</button>
@@ -81,42 +124,15 @@
 					</div>
 				
 				</div>
-				
-				<div class="productBody">
-				
-					<img class="prodLogo" src="../images/vendorSClogowithbackground.png" alt="vendorSC logo">
-					<div class="prodInfo">
 					
-						<h1 class="prodName">PRODUCT NAME: NAME</h1>
-						<h1 class="prodCat">PRODUCT CATEGORY: CATEGORY</h1>
-						<h1 class="prodCat">RATING: 4.5</h1>
-						
-						<form action="" method="GET">
-							<button type="submit" class="prod-purchase">PURCHASE</button>
-						</form>		
-						
-						
-					</div>
-				
-				</div>
-				
-				<div class="productBody">
-				
-					<img class="prodLogo" src="../images/vendorSClogowithbackground.png" alt="vendorSC logo">
-					<div class="prodInfo">
 					
-						<h1 class="prodName">PRODUCT NAME: NAME</h1>
-						<h1 class="prodCat">PRODUCT CATEGORY: CATEGORY</h1>
-						<h1 class="prodCat">RATING: 4.5</h1>
+					
 						
-						<form action="" method="GET">
-							<button type="submit" class="prod-purchase">PURCHASE</button>
-						</form>		
-						
-						
-					</div>
+					<% }count++;
+					}	}
+				%>
 				
-				</div>
+				
 <!-- EXAMPLE PRODUCTS END -->
 			
 			</div>
@@ -137,12 +153,51 @@
 			<div class="bodyDiv">
 			
 <!-- EXAMPLE BUSINESSES START -->
-				<div class="productBody">
+				<%conn = null;
+				ps = null;
+				rs = null;
+				ArrayList <Business> businesses = new ArrayList <Business>();
+				try {
+					Class.forName("com.mysql.jdbc.Driver");
+					conn = DriverManager.getConnection("jdbc:mysql://google/vendorDB?cloudSqlInstance=vendorsc:us-central1:vendor&socketFactory=com.google.cloud.sql.mysql.SocketFactory&useSSL=false&user=vendor&password=0203");
+					ps = conn.prepareStatement("SELECT * FROM Business");
+					rs = ps.executeQuery();
+					while (rs.next()) {				
+						Business business = new Business(rs.getString("username"));
+						businesses.add(business);
+					}
+				}
+				finally {conn.close();
+				ps.close();}
 				
-					<img class="prodLogo" src="../images/vendorSClogowithbackground.png" alt="vendorSC logo">
+				
+				count = 0;
+				indices = new ArrayList <Integer>();
+				if (businesses.size() == 0){%>
+					<div class="productBody">
+				
+					<h1>No Recommended Businesses Available </h1>
+				
+				</div>
+				<% }
+				else{
+					while (count < businesses.size()){
+				
+					int number = (int) (Math.random() * businesses.size()-1);
+					if (indices.contains(number)){
+						count++;
+						continue;
+					}
+					else{
+					indices.add(number);
+					%>
+					
+					<div class="productBody">
+				
+					<img class="prodLogo" src="" alt="vendorSC logo">
 					<div class="prodInfo">
 					
-						<h1 class="busiName">VENDORSC</h1>
+						<h1 class="busiName">"<%=businesses.get(number).getName() %>"</h1>
 						
 						<form action="" method="GET">
 							<button type="submit" class="busiView">VIEW PAGE</button>
@@ -151,39 +206,33 @@
 						
 					</div>
 				
-				</div>
-				
-				<div class="productBody">
-				
-					<img class="prodLogo" src="../images/vendorSClogowithbackground.png" alt="vendorSC logo">
-					<div class="prodInfo">
-					
-						<h1 class="busiName">VENDORSC</h1>
-						
-						<form action="" method="GET">
-							<button type="submit" class="busiView">VIEW PAGE</button>
-						</form>		
-						
-						
 					</div>
-				
-				</div>
-				
-				<div class="productBody">
-				
-					<img class="prodLogo" src="../images/vendorSClogowithbackground.png" alt="vendorSC logo">
-					<div class="prodInfo">
 					
-						<h1 class="busiName">VENDORSC</h1>
+					
+					
 						
-						<form action="" method="GET">
-							<button type="submit" class="busiView">VIEW PAGE</button>
-						</form>		
-						
-						
-					</div>
+					<% }count++;
+					}	}
+				%>
 				
-				</div>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
 <!-- EXAMPLE BUSINESSES END -->
 			
 			</div>

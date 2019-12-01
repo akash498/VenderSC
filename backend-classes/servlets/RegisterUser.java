@@ -16,6 +16,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import backend_classes.User;
+
 /**
  * Servlet implementation class RegisterUser
  */
@@ -114,6 +116,8 @@ public class RegisterUser extends HttpServlet {
 					next = "/UserHomePage.jsp";
 					session.setAttribute("loggedIn", "true");
 					session.setAttribute("username", username);
+					User user = new User(username);
+					session.setAttribute("user", user);
 				}
 			}
 			

@@ -16,6 +16,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import backend_classes.Business;
+
 /**
  * Servlet implementation class Register
  */
@@ -109,6 +111,8 @@ public class RegisterBusiness extends HttpServlet {
 					next = "/BusinessHomePage.jsp";
 					session.setAttribute("loggedIn", "true");
 					session.setAttribute("username", username);
+					Business business = new Business(username);
+					session.setAttribute("business", business);
 				}	
 			}
 		}
