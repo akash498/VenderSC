@@ -37,5 +37,23 @@
   </form>
 </div>
 
+<script> 
+	var button = document.querySelector(".btn-upload");
+	var fileBrowser = document.querySelector("#fileBrowser");
+	
+	fileBrowser.onchange = function() {
+		
+		console.log(fileBrowser.value);
+		
+		if(fileBrowser.value == null || fileBrowser.value == ""){
+			button.innerHTML = "Upload a file";
+		} 
+		else {
+			button.innerHTML = fileBrowser.value; 
+		}
+	};
+
+</script>
+
 </body> 
 </html>

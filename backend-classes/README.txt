@@ -2,9 +2,17 @@ Please update this file when you do work on the backend.
 
 NOTE: When making a servlet, INCLUDE "Servlet" in the end of the class name.
 
-LoginServlet: Status - Incomplete
+LoginServlet: Status - Complete
 
-	Need to update image loading.
+	Works as expected.
+
+BusinessRegisterServlet: Complete!
+
+	Works as expected.
+
+BusinessRegister.jsp: Complete!
+
+	Works as expected.
 
 Business.java: Status - Complete!
 
