@@ -6,38 +6,10 @@
 
 	<meta charset="ISO-8859-1">
 	<title>VendorSC</title>
-	<link rel="stylesheet" type="text/css" href="css/AddProductPage.css">
+	<link rel="stylesheet" type="text/css" href="AddProductPage.css">
 	<!-- 	Icon Library	 -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	
-	<script>
-	
-	
-		function updateRate(x) {
-			if(x==0){
-				
-				document.getElementById("yes").style.backgroundColor = "#C4C4C4";
-				document.getElementById("yes").style.color = "#929292";
-				
-				document.getElementById("no").style.backgroundColor = "#929292";
-				document.getElementById("no").style.color = "#C4C4C4";
-				
-				document.getElementById("ratable").value = "no";
-			}
-			else {
-				document.getElementById("yes").style.backgroundColor = "#929292";
-				document.getElementById("yes").style.color = "#C4C4C4";
-				
-				document.getElementById("no").style.backgroundColor = "#C4C4C4";
-				document.getElementById("no").style.color = "#929292";
-				
-				document.getElementById("ratable").value = "yes";
-			}
-			console.log(document.getElementById("ratable").value);
-		}
-	
-	
-	</script>
+
 
 
 </head>
@@ -45,19 +17,19 @@
 
 <!-- Start of Header Div -->
 	<div id="header">
-	
+
 			<img id="headerLogo" src="images/vendorSClogowithbackground.png" alt="vendorSC logo">
-			<div id="header-divider"></div> 
-				
+			<div id="header-divider"></div>
+
 			<div id="searchBar">
-			
+
 				<h1 id="busiTitle">BUSINESS TITLE</h1>
-			
+
 			</div>
-				
+
 			<div id="logout"></div>
-				
-			
+
+
 	</div>
 <!-- End of Header Div -->
 
@@ -65,13 +37,13 @@
 <!-- Start of Body Div -->
 
 	<div id="innerDiv">
-	
+
 		<div id="headDiv">
-		
+
 			<h1 id="addProd">NEW PRODUCT FORM</h1>
-			
-			<form action="AddProductPageServlet" method="GET" id="search-form">
-				
+
+			<form action="AddProductPageServlet" method="POST" id="search-form" enctype="multipart/form-data">
+
 				<div id="formDiv">
 					<label id="productTitle">Product Name:</label><br>
 					<input type="text" name="prodName" class="form-control" id="productText" placeholder="ADD A PRODUCT NAME:">
@@ -83,7 +55,7 @@
 						<br>
 						<div class="upload-btn-wrapper">
 							<button class="btn-upload">Upload a file</button>
-							<input type="file" name="image" accept="image/*">
+							<input type="file" name="image" accept="image/*" id="fileBrowser">
 						</div>
 					</div>
 					<div id="rateDiv">
@@ -96,13 +68,13 @@
 					<br>
 					<button type="submit" id="submit">SUBMIT FORM FOR VERIFICATION</button><br>
 				</div>
-				
-			</form> 
-		
+
+			</form>
+
 		</div>
-	
-	
-	
+
+
+
 	</div>
 
 
@@ -117,22 +89,46 @@
 	</div>
 <!-- End of Footer Div -->
 <!-- Javascript to change tect on file browser -->
-<script> 
+<script>
 	var button = document.querySelector(".btn-upload");
 	var fileBrowser = document.querySelector("#fileBrowser");
-	
+
 	fileBrowser.onchange = function() {
-		
+
 		console.log(fileBrowser.value);
-		
+
 		if(fileBrowser.value == null || fileBrowser.value == ""){
 			button.innerHTML = "Upload a file";
-		} 
-		else {
-			button.innerHTML = fileBrowser.value; 
 		}
+		else {
+			button.innerHTML = fileBrowser.value;
+		}
+
 	};
+
+	function updateRate(x) {
+		if(x==0){
+
+			document.getElementById("yes").style.backgroundColor = "#C4C4C4";
+			document.getElementById("yes").style.color = "#929292";
+
+			document.getElementById("no").style.backgroundColor = "#929292";
+			document.getElementById("no").style.color = "#C4C4C4";
+
+			document.getElementById("ratable").value = "no";
+		}
+		else {
+			document.getElementById("yes").style.backgroundColor = "#929292";
+			document.getElementById("yes").style.color = "#C4C4C4";
+
+			document.getElementById("no").style.backgroundColor = "#C4C4C4";
+			document.getElementById("no").style.color = "#929292";
+
+			document.getElementById("ratable").value = "yes";
+		}
+		console.log(document.getElementById("ratable").value);
+	}
 </script>
-	
+
 </body>
 </html>
