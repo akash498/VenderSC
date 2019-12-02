@@ -143,7 +143,7 @@ html,body {
 }
 
 #login-box { 
-	margin-top: 40px;
+	margin-top: 20px;
 	border: 5px solid #FFCC00;
 	width: 25%;
 	margin-right: auto;
@@ -193,6 +193,7 @@ html,body {
 
 /*Start of CSS for footer*/
 #footer {
+	
 	background-color: #990000;
 	width: 100%;
 	height: 130px;
@@ -201,6 +202,7 @@ html,body {
 	position: fixed;
   	left: 0;
   	bottom: 0;
+  	
 }
 
 #footer-divider-left {
@@ -218,13 +220,9 @@ html,body {
 	height: 100%;
 	padding-left: 34px;
 }
-#xyz {
-	height:10px%;
-	padding-top: 4px;
-	float: right;
-}
+
 #footer img {
-	height: 130px;
+	height: 90%;
 	padding-top: 4px;
 	float: right;	
 }

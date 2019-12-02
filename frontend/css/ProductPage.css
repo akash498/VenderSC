@@ -137,177 +137,254 @@
 }
 /* END OF SEARCH NAV CSS */
 
-
-
-/* Start of inner div css */
-
-#innerDiv {
+#containerDiv {
 	
-	position: relative;
-	left: 10%;
+	width: 100%;
+	min-height: 340px;
+	
+	overflow: hidden;
+	
+}
+
+#imageDiv {
+	
+	width:40%;
+	min-height:340px;
+	float:left;
+
+}
+
+#logo{
+	
+	position:relative;
 	width: 80%;
-	height: 580px;
-		
-}
-
-#prodDiv {
-	
-	position: relative;
-	width: calc(50% - 2px);
-	height: 580px;
-	
-	float: left;
+	height:300px;
+	left: 10%;
+	top: 20px;
 	
 }
 
-#bioDiv {
+#productDiv{
 	
-	position: relative;
-	width: calc(50% - 2px);
-	height: 580px;
-	
+	width: 60%;
+	min-height:340px;
 	float: right;
 	
+	overflow: hidden;
+
 }
 
-.headDiv {
+.info{
 	
 	position: relative;
-	top: 10px;
-	left: 10%;
-	width: 80%;
-	height: 50px;
 	
-}
-
-.head {
-	
-	position: relative;
-	top: 10px;
+	margin-top:20px;
+	font-size: 30px;
 	font-family: varsity;
-	text-align: center;
-	font-size: 25px;
 	color: black;
 	
 }
 
-.bodyDiv {
+#purchase {
+	
+	
+	margin-top: 30px;
+	margin-bottom:30px;
+	font-size: 25px;
+	font-family: varsity;
+	color: #FFC72C;
+	background-color: #990000;
+	width: 35%;
+	height: 40px;
+	border-radius: 5px;
+	
+	
+}
+
+#reviewDiv{
+	
+	min-height: 180px;
+	width: 100%;
+	
+}
+
+#revs {
+	
+	
+	position: relative;
+	left: 4%;
+	
+	width: 50%;
+	
+	font-size: 30px;
+	font-family: Varsity;
+	
+	
+}
+
+.reviewContainer {
 	
 	position: relative;
 	left: 10%;
-	top: 20px;
+	
+	margin-top: 10px;
+	margin-bottom: 10px;
+	
 	width: 80%;
-	height: 340px;
-	margin-top: 20px;
-	overflow-y:auto;
+	min-height: 100px;
 	
-}
-
-.productBody {
+	border: 4px solid #FFC72C;
 	
-	position: relative;
-	top: 5px;
-	
-	min-height: 150px;
-	width: 100%;
-	
-	padding-top: 10px;
-	padding-bottom: 10px;
+	background-color: #990000;
 	
 	overflow: hidden;
-	border-bottom: 2px solid black;
+	
+	
 	
 }
 
-.prodLogo {
+.image {
 	
-	position: relative;
-	top: 5px;
+	width:20%;
+	
 	float: left;
-	width:35%;
-	height: 140px;
+	min-height: 100px;
 	
 }
 
-.prodInfo {
+.profilePic {
 	
 	position: relative;
 	
-	min-height: 140px;
-	width: 60%;
+	left: 10%;
+	height: 50px;
 	
-	padding-top: 5px;
-	padding-bottom: 5px;
+	margin-top: 10px;
+	
+	width:80%;
+	
+	border: 1px solid black;
+	
+	
+}
+
+.reviewInfo {
+	
+	width: calc(80% - 10px);
+	min-height: 100px;
+	float: right;
+	padding: 5px 5px 5px 5px;
 	
 	overflow: hidden;
 	
 }
 
-.prodName {
-	
-	margin-top: 10px;
-	font-family: varsity;
-	font-size: 20px;
-	
-}
-
-.prodCat {
-	
-	margin-top: 10px;
-	font-family: varsity;
-	font-size: 20px;
-	
-}
-
-.prod-purchase {
+.username {
 	
 	position: relative;
+	
+	color: #FFC72C;
+	
+	font-size: 20px;
+	font-family: Varsity;
+	
+	margin-top: 5px;
+	margin-bottom: 5px;
+	
+	min-height: 30px;
+	
+}
+
+.statement {
+	
+	position: relative;
+	
+	color: #FFC72C;
+	
+	font-size: 20px;
+	font-family: Varsity;
+	
+	margin-top: 5px;
+	margin-bottom: 5px;
+	
+	min-height: 30px;
+	
+	
+}
+
+#reviewHeader {
+	
+	position: relative;
+	
 	margin-top: 10px;
+	left: 5%;
+	
+	font-size: 20px;
+	font-family: Varsity;
+	
+	color: #FFC72C;
+}
+
+#userInput {
+	
+	position: relative;
+	
+	font-size: 20px;
+	font-family: Varsity;
+	
+	top: 10px;
+	left: 5%;
+	
+	width: 70%;
+	height: 80px;
+	
+	color: #FFC72C;
+	background-color: white;
+	
+	border: 4px solid #FFC72C; 
+	overflow-y: scroll;
+	
+}
+
+#reviewButton {
+	
+	position: relative;
+	left: 80%;
+	bottom: 40px;
 	font-size: 25px;
 	font-family: varsity;
 	color: #FFC72C;
 	background-color: #990000;
-	width: 50%;
+	width: 15%;
 	height: 40px;
 	border-radius: 5px;
+	border: 4px solid #FFC72C; 
+	
 	
 }
 
-
-.busiName {
+.button {
 	
-	margin-top: 10px;
 	font-family: varsity;
-	font-size: 20px;
-	
-}
-
-.busiView {
-	
 	position: relative;
-	margin-top: 75px;
-	font-size: 25px;
-	font-family: varsity;
 	color: #FFC72C;
+	font-size: 20px;
 	background-color: #990000;
-	width: 50%;
-	height: 40px;
-	border-radius: 5px;
+	left: 5%;
+	margin-right: 30px;
 	
 }
 
 
-
-/* End of inner div css */
 
 /*Start of CSS for footer*/
 #footer {
+	position: relative;
 	background-color: #990000;
 	width: 100%;
 	height: 130px;
 	border-top: 4px solid #FFCC00;
 	border-bottom: 4px solid #FFCC00;
-	position: fixed;
   	left: 0;
   	bottom: 0;
 }
@@ -316,7 +393,7 @@
 	
 	border-right: 4px solid #FFCC00;
 	width: 10%;
-	height: 140px;
+	height: 130px;
 	float: left;
 	
 }

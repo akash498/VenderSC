@@ -25,13 +25,16 @@
 			<div id="header-divider"></div> 
 			<div id="search-form">
 			
+				<form action = "UserHomePageServlet" method="GET">
 				
 					<div id="searchBar">
-						<input type="text" name="" class="form-control" id="search-id" placeholder="SEARCH FOR PRODUCT OR BUSINESS">
+						<input type="text" name="userSearch" class="form-control" id="search-id" placeholder="SEARCH FOR PRODUCT OR BUSINESS">
 						<button type="submit" id="submit-button"><i class="fa fa-search"></i>Search</button><br>
 						<label class="radButton"><input type="radio" name="filter" value="business"> Business</label>
 						<label class="radButton"><input type="radio" name="filter" value="product"> Product</label>
 					</div>
+					
+				</form>
 				
 			
 			</div>
@@ -41,8 +44,8 @@
 				<div id="logout">	
 					
 					<img id="signoutLogo" src="images/ProfileIIcon.png" alt="vendorSC logo">
-					<form action = "GuestHomePage.jsp">
-						<button type="submit" id="logoutButton">Logout</button><br>
+					<form action="UserHomePageServlet" method="GET">
+						<button type="submit" name="logout" id="logoutButton">Logout</button><br>
 					</form>	
 				</div>
 				
@@ -114,11 +117,17 @@
 					
 						<h1 class="prodName">PRODUCT NAME: <%=products.get(number).getName() %> </h1>
 						<h1 class="prodCat">PRODUCT CATEGORY: <%=products.get(number).getName() %></h1>
-						<h1 class="prodCat">RATING: <%=products.get(number).getRating() %></h1>
+						<% if(products.get(number).getRating()<0){ %>
+							<h1 class="prodCat">RATING: NOT YET RATED!</h1>
+						<%} 
+						else{%>
+							<h1 class="prodCat">RATING: <%=products.get(number).getRating() %></h1>
+						<%} %>
+						
 						
 						<form action="UserHomePageServlet" method="GET">
-							<input type="hidden" name="prodIndex" value="<%= count %>" />
-							<button type="submit" name="purchase" class="prod-purchase">PURCHASE</button>
+							<input type="hidden" name="prodIndex" value="<%= number %>" />
+							<button type="submit" name="purchase" class="prod-purchase">VIEW</button>
 						</form>		
 						
 						
@@ -171,7 +180,7 @@
 				finally {conn.close();
 				ps.close();}
 				
-				
+				session.setAttribute("businesses", businesses);
 				count = 0;
 				indices = new ArrayList <Integer>();
 				if (businesses.size() == 0){%>
@@ -195,13 +204,14 @@
 					
 					<div class="productBody">
 				
-					<img class="prodLogo" src="" alt="vendorSC logo">
+					<img class="prodLogo" src="<%= businesses.get(number).getImagePath() %>" alt="vendorSC logo">
 					<div class="prodInfo">
 					
 						<h1 class="busiName">"<%=businesses.get(number).getName() %>"</h1>
 						
-						<form action="" method="GET">
-							<button type="submit" class="busiView">VIEW PAGE</button>
+						<form action="UserHomePageServlet" method="GET">
+							<input type="hidden" name="busiIndex" value="<%= number %>" />
+							<button type="submit" name="business" class="busiView">VIEW PAGE</button>
 						</form>		
 						
 						
