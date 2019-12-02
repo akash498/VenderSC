@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1" import="java.util.*"%>
-<%@ page import = "backend_classes.Business"%>
-<%@ page import = "backend_classes.Product"%>
-<%@ page import = "backend_classes.User"%>
+<%@ page import = "backend.Business"%>
+<%@ page import = "backend.Product"%>
+<%@ page import = "backend.User"%>
 <%@ page import = "java.sql.*" %>
 <!DOCTYPE html>
 <html>
@@ -10,7 +10,7 @@
 
 	<meta charset="ISO-8859-1">
 	<title>VendorSC</title>
-	<link rel="stylesheet" type="text/css" href="UserHomePage.css">
+	<link rel="stylesheet" type="text/css" href="css/UserHomePage.css">
 	<!-- 	Icon Library	 -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -21,7 +21,7 @@
 <!-- Start of Header Div -->
 	<div id="header">
 	
-			<img id="headerLogo" src="../images/vendorSClogowithbackground.png" alt="vendorSC logo">
+			<img id="headerLogo" src="images/vendorSClogowithbackground.png" alt="vendorSC logo">
 			<div id="header-divider"></div> 
 			<div id="search-form">
 			
@@ -40,7 +40,7 @@
 				
 				<div id="logout">	
 					
-					<img id="signoutLogo" src="../images/ProfileIIcon.png" alt="vendorSC logo">
+					<img id="signoutLogo" src="images/ProfileIIcon.png" alt="vendorSC logo">
 					<form action = "GuestHomePage.jsp">
 						<button type="submit" id="logoutButton">Logout</button><br>
 					</form>	
@@ -85,7 +85,7 @@
 				finally {conn.close();
 				ps.close();}
 				
-				
+				session.setAttribute("products", products);
 				int count = 0;
 				ArrayList<Integer> indices = new ArrayList <Integer>();
 				if (products.size() == 0){%>
@@ -116,8 +116,9 @@
 						<h1 class="prodCat">PRODUCT CATEGORY: <%=products.get(number).getName() %></h1>
 						<h1 class="prodCat">RATING: <%=products.get(number).getRating() %></h1>
 						
-						<form action="" method="GET">
-							<button type="submit" class="prod-purchase">PURCHASE</button>
+						<form action="UserHomePageServlet" method="GET">
+							<input type="hidden" name="prodIndex" value="<%= count %>" />
+							<button type="submit" name="purchase" class="prod-purchase">PURCHASE</button>
 						</form>		
 						
 						
@@ -212,23 +213,9 @@
 					
 						
 					<% }count++;
-					}	}
+					}	
+				}
 				%>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
 				
 				
 				
@@ -251,7 +238,7 @@
 	<div id="footer">
 		<div id="footer-divider-left"></div>
 		<div id="footer-divider-right">
-			<img src="../images/vendorSClogowithbackground.png" alt="footerLogo">
+			<img src="images/vendorSClogowithbackground.png" alt="footerLogo">
 		</div>
 	</div>
 <!-- End of Footer Div -->
