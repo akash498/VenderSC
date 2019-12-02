@@ -1,5 +1,7 @@
-import backend_classes.Product;
-import backend_classes.Business;
+package backend;
+
+import backend.Product;
+import backend.Business;
 
 
 import java.io.IOException;
@@ -12,6 +14,7 @@ import java.sql.Statement;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.*;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -45,19 +48,25 @@ public class Search extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
 		PrintWriter out=response.getWriter();
-		String searchText=request.getParameter("SearchText");
-
-		if((searchText.contentEquals(""))||(searchText==null)) {
-			out.println("Search Empty");
-			out.flush();
-			out.close();
-		}
-		String[] searchTerms= searchText.split(" ");
+		String searchText=request.getParameter("userSearch");
 		String searchType= request.getParameter("filter");
-
-
+		
+		
+		if((searchText.contentEquals(""))||(searchText==null || searchType == null || searchType.contentEquals(""))) {
+			if (request.getParameter("guestSearch")!=null) {
+				response.sendRedirect("GuestHomePage.jsp");
+			}
+			else if (request.getParameter("businessSearch")!=null) {
+				response.sendRedirect("BusinessHomePage.jsp");
+			}
+			else if (request.getParameter("UserSearch")!=null) {
+				response.sendRedirect("UserHomePage.jsp");
+			}
+		}
+		else {
+		String[] searchTerms= searchText.split(" ");
+	
 		Connection conn = null;
 		Statement st = null;
 		ResultSet rs = null;
@@ -70,9 +79,10 @@ public class Search extends HttpServlet {
 
 			st = conn.createStatement();
 			if(searchType.contentEquals("product") ) { //for products
-				ps = conn.prepareStatement("SELECT * FORM Product WHERE name=?");
+				ps = conn.prepareStatement("SELECT * FROM Product WHERE name=?");
 				ps.setString(1, searchText);
 				rs = ps.executeQuery();
+				Set<String> set = new HashSet<String>();
 				while(rs.next()) {//AND search
 					String name=rs.getString("name");
 					String shortDescription=rs.getString("shortDescription");
@@ -82,12 +92,15 @@ public class Search extends HttpServlet {
 					int ratable=rs.getInt("ratable");
 					String imageLocation=rs.getString("imageLocation");
 					Product product= new Product(name, shortDescription, description, businessID, productID, ratable, imageLocation);
+					if (!set.contains(product.getName())) {
+						set.add(product.getName());
+						productResults.add(product);
 
-					productResults.add(product);
+					}
 				}
 
 				for(int i=0; i<searchTerms.length; i++) {//OR search for Products
-					ps = conn.prepareStatement("SELECT * FORM Product WHERE name=?");
+					ps = conn.prepareStatement("SELECT * FROM Product WHERE name=?");
 
 					ps.setString(1, searchText);
 					rs = ps.executeQuery();
@@ -101,26 +114,35 @@ public class Search extends HttpServlet {
 						String imageLocation=rs.getString("imageLocation");
 						Product product= new Product(name, shortDescription, description, businessID, productID, ratable, imageLocation);
 
-						productResults.add(product);
+						if (!set.contains(product.getName())) {
+							set.add(product.getName());
+							productResults.add(product);
+
+						}
 
 				}
 
 				}
 			}
 			else if(searchType.contentEquals("business") ) { //AND search for business
-				ps = conn.prepareStatement("SELECT * FORM Business WHERE name=?");
+				ps = conn.prepareStatement("SELECT * FROM Business WHERE name=?");
 				ps.setString(1, searchText);
 				rs = ps.executeQuery();
+				Set<String> set = new HashSet<String>();
+
 				while(rs.next()) {
 					String name=rs.getString("name");
 
 					Business business= new Business(name);
 
-					businessResults.add(business);
+					if (!set.contains(name)) {
+						set.add(name);
+						businessResults.add(business);
+					}
 				}
 
 				for(int i=0; i<searchTerms.length; i++) {//OR search for business
-					ps = conn.prepareStatement("SELECT * FORM Product WHERE name=?");
+					ps = conn.prepareStatement("SELECT * FROM Product WHERE name=?");
 
 					ps.setString(1, searchTerms[i]);
 					rs = ps.executeQuery();
@@ -129,20 +151,23 @@ public class Search extends HttpServlet {
 
 						Business business= new Business(name);
 
-						businessResults.add(business);
+						if (!set.contains(name)) {
+							set.add(name);
+							businessResults.add(business);
+						}
 
 				}
 
 				}
 			}
 
-			response.sendRedirect("SearchResults.jsp/UserSearch="+searchText);
+			response.sendRedirect("SearchResults.jsp?searchType="+searchType+"&userSearch="+searchText);
 		}
 		catch (SQLException sqle) {
 			System.out.println(sqle.getMessage());
 
 		}
-
+		}
 	}
 
 	/**
