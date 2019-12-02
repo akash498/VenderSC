@@ -1,0 +1,413 @@
+@charset "ISO-8859-1";
+
+@font-face {
+	font-family: varsity;
+	src: url("../assets/VarsityTeam-Bold.otf");
+}
+
+/*START OF SEARCH NAV CSS */
+@font-face {
+	font-family: varsity;
+	src: url("../assets/VarsityTeam-Bold.otf");
+}
+
+::placeholder {
+	color: #FFC72C;
+}
+* {
+	margin: 0;
+	padding-top: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+
+#header {
+	
+	width: 100%;
+	height: 160px;
+	background-color: #990000;
+	border-bottom: 4px solid #FFC72C;
+	border-top: 4px solid #FFC72C;
+	
+}
+
+#headerLogo {
+	
+	width: 10%;
+	height: 130px;
+	
+}
+
+#searchBar {
+	
+	position: relative;
+	left: 10%;
+	bottom: 135px;
+	width: 80%;
+	height: 160px;
+	border-left: 4px solid #FFC72C;
+	border-right: 4px solid #FFC72C;
+	
+	
+}
+
+#search-id {
+	
+	font-family: varsity;
+	position: relative;
+	width: 60%;
+	height: 50px;
+	color: #FFC72C;
+	font-size: 30px;
+	padding-left: 20px;
+	padding-right: 20px;
+	border: 4px solid #FFC72C;
+	background-color: white;
+	left: 40px;
+	top: 50px;
+	
+}
+
+.radButton {
+	
+	font-family: varsity;
+	position: relative;
+	color: #FFC72C;
+	font-size: 20px;
+	background-color: #990000;
+	left: 40px;
+	top: 60px;
+	margin-right: 30px;
+	
+}
+
+#submit-button {
+	
+	font-family: varsity;
+	position: relative;
+	width: 15%;
+	height: 60px;
+	text-align: center;
+	padding-bottom:10px;
+	color: #FFC72C;
+	font-size: 30px;
+	border: 4px solid #FFC72C;
+	background-color: #990000;
+	left: 120px;
+	top: 45px;
+	
+}
+
+#logout {
+	
+	position: relative;
+	width: 10%;
+	height: 130px;
+	left: 90%;
+	bottom: 270px;
+	
+}
+
+#signoutLogo {
+	
+	position: relative;
+	width: 60%;
+	height: 50%;
+	left: 20%;
+	
+}
+
+#logoutButton {
+	
+	font-family: varsity;
+	position: relative;
+	color: #FFC72C;
+	background-color: #990000;
+	
+	border: 4px solid #FFC72C;
+	
+	font-size: 25px;
+	width: 80%;
+	height: 40px;
+	left: 10%;
+	
+}
+/* END OF SEARCH NAV CSS */
+
+#containerDiv {
+	
+	width: 100%;
+	min-height: 340px;
+	
+	overflow: hidden;
+	
+}
+
+#imageDiv {
+	
+	width:40%;
+	min-height:340px;
+	float:left;
+
+}
+
+#logo{
+	
+	position:relative;
+	width: 80%;
+	height:300px;
+	left: 10%;
+	top: 20px;
+	
+}
+
+#productDiv{
+	
+	width: 60%;
+	min-height:340px;
+	float: right;
+	
+	overflow: hidden;
+
+}
+
+.info{
+	
+	position: relative;
+	
+	margin-top:20px;
+	font-size: 30px;
+	font-family: varsity;
+	color: black;
+	
+}
+
+#purchase {
+	
+	
+	margin-top: 30px;
+	margin-bottom:30px;
+	font-size: 25px;
+	font-family: varsity;
+	color: #FFC72C;
+	background-color: #990000;
+	width: 35%;
+	height: 40px;
+	border-radius: 5px;
+	
+	
+}
+
+#reviewDiv{
+	
+	min-height: 180px;
+	width: 100%;
+	
+}
+
+#revs {
+	
+	
+	position: relative;
+	left: 4%;
+	
+	width: 50%;
+	
+	font-size: 30px;
+	font-family: Varsity;
+	
+	
+}
+
+.reviewContainer {
+	
+	position: relative;
+	left: 10%;
+	
+	margin-top: 10px;
+	margin-bottom: 10px;
+	
+	width: 80%;
+	min-height: 100px;
+	
+	border: 4px solid #FFC72C;
+	
+	background-color: #990000;
+	
+	overflow: hidden;
+	
+	
+	
+}
+
+.image {
+	
+	width:20%;
+	
+	float: left;
+	min-height: 100px;
+	
+}
+
+.profilePic {
+	
+	position: relative;
+	
+	left: 20%;
+	height: 80px;
+	
+	margin-top: 10px;
+	
+	width:60%;
+	
+	border: 4px solid #FFC72C;
+	
+	
+}
+
+.reviewInfo {
+	
+	width: calc(80% - 10px);
+	min-height: 100px;
+	float: right;
+	padding: 5px 5px 5px 5px;
+	
+	overflow: hidden;
+	
+}
+
+.username {
+	
+	position: relative;
+	
+	color: #FFC72C;
+	
+	font-size: 20px;
+	font-family: Varsity;
+	
+	margin-top: 5px;
+	margin-bottom: 5px;
+	
+	min-height: 30px;
+	
+}
+
+.statement {
+	
+	position: relative;
+	
+	color: #FFC72C;
+	
+	font-size: 20px;
+	font-family: Varsity;
+	
+	margin-top: 5px;
+	margin-bottom: 5px;
+	
+	min-height: 30px;
+	
+	
+}
+
+#reviewHeader {
+	
+	position: relative;
+	
+	margin-top: 10px;
+	left: 5%;
+	
+	font-size: 20px;
+	font-family: Varsity;
+	
+	color: #FFC72C;
+}
+
+#userInput {
+	
+	position: relative;
+	
+	font-size: 20px;
+	font-family: Varsity;
+	
+	top: 10px;
+	left: 5%;
+	
+	width: 70%;
+	height: 80px;
+	
+	color: #FFC72C;
+	background-color: white;
+	
+	border: 4px solid #FFC72C; 
+	overflow-y: scroll;
+	
+}
+
+#reviewButton {
+	
+	position: relative;
+	left: 80%;
+	bottom: 40px;
+	font-size: 25px;
+	font-family: varsity;
+	color: #FFC72C;
+	background-color: #990000;
+	width: 15%;
+	height: 40px;
+	border-radius: 5px;
+	border: 4px solid #FFC72C; 
+	
+	
+}
+
+.button {
+	
+	font-family: varsity;
+	position: relative;
+	color: #FFC72C;
+	font-size: 20px;
+	background-color: #990000;
+	left: 5%;
+	margin-right: 30px;
+	
+}
+
+
+
+/*Start of CSS for footer*/
+#footer {
+	position: relative;
+	background-color: #990000;
+	width: 100%;
+	height: 130px;
+	border-top: 4px solid #FFCC00;
+	border-bottom: 4px solid #FFCC00;
+  	left: 0;
+  	bottom: 0;
+}
+
+#footer-divider-left {
+	
+	border-right: 4px solid #FFCC00;
+	width: 10%;
+	height: 130px;
+	float: left;
+	
+}
+
+#footer-divider-right {
+	border-left: 4px solid #FFCC00;
+	float: right;
+	height: 100%;
+	padding-left: 34px;
+}
+
+#footer img {
+	height: 90%;
+	padding-top: 4px;
+/*	float: right;	*/
+}
+/*End of CSS for footer*/

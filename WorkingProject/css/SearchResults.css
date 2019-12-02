@@ -1,0 +1,62 @@
+@charset "ISO-8859-1";
+
+@font-face {
+	font-family: varsity;
+	src: url("../assets/VarsityTeam-Bold.otf");
+}
+
+body {
+	font-family: varsity;
+}
+
+.productImage {
+	display: inline-block;
+	width:25%;
+	position: relative;
+	right: -55px;
+	margin-right: 40px;
+}
+
+.purchase {
+	font-family: varsity;
+	background: #990000;
+	border-radius: 10px;
+	letter-spacing: 0.07em;
+	color: #FFCC00;
+	padding: 5px;
+	margin-top: 10px;
+}
+
+.businessName {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.product {
+	padding-top: 18px;
+	padding-bottom: 18px;
+}
+.searchResultsDiv {
+	color: black;
+	width: 75%;
+	margin: 0 auto;
+}
+
+.searchResultsHeader {
+	font-size: x-large;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.productInfo {
+	vertical-align: top;
+	display: inline-block;
+	width:65%;
+	font-size: x-large;
+}
+
+hr {
+	border-style: solid;
+    border-width: .5px;
+}
+
+
